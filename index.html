@@ -1,1895 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UsedEnginePro - Get The Right Auto Parts Every Time</title>
-    <meta name="description"
-        content="Expert parts matching service guarantees you get the exact right part the first time - or your money back. Free consultation available." />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script type="module"
-        src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fautoparts6321back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FlowPro - Streamline your workflow and boost productivity with our all-in-one collaboration platform">
+    <title>FlowPro - Streamline Your Workflow</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><polygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/></svg>">
 </head>
-
-<body class="font-inter bg-background">
-    <!-- Navigation Header -->
-    <nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <svg class="h-10 w-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
-                        <path
-                            d="M20 4L4 12v16l16 8 16-8V12L20 4zm0 4.5L30.5 14 20 19.5 9.5 14 20 8.5zM8 16.5l10 5v11l-10-5v-11zm12 16v-11l10-5v11l-10 5z" />
-                    </svg>
-                    <span class="ml-3 text-xl font-bold text-primary">UsedEnginePro</span>
-                </div>
-
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#parts-catalog" class="text-text-secondary hover:text-primary transition-colors">Parts
-                        Catalog</a>
-                    <a href="#how-it-works" class="text-text-secondary hover:text-primary transition-colors">How It
-                        Works</a>
-                    <a href="#testimonials" class="text-text-secondary hover:text-primary transition-colors">Reviews</a>
-                    <a href="tel:+19093427288"
-                        class="bg-accent-50 text-accent hover:bg-accent hover:text-white transition-all px-4 py-2 rounded-lg border-2 border-accent flex items-center font-bold text-lg shadow-md hover:shadow-lg transform hover:scale-105">
-                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <div class="logo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                         </svg>
-                        (909) 342-7288
-                    </a>
-                    <button onclick="openConsultationModal()" class="btn-primary">Get Free Consultation</button>
+                    </div>
+                    <span class="brand-name">FlowPro</span>
                 </div>
-
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
+                
+                <div class="nav-links">
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#pricing" class="nav-link">Pricing</a>
+                    <button class="btn-primary">Get Started</button>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
+                    <span class="hamburger"></span>
                 </button>
             </div>
         </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
-            <div class="px-4 py-3 space-y-3">
-                <a href="#parts-catalog" class="block text-text-secondary hover:text-primary transition-colors">Parts
-                    Catalog</a>
-                <a href="#how-it-works" class="block text-text-secondary hover:text-primary transition-colors">How It
-                    Works</a>
-                <a href="#testimonials"
-                    class="block text-text-secondary hover:text-primary transition-colors">Reviews</a>
-                <a href="tel:+19093427288"
-                    class="block bg-accent-50 text-accent hover:bg-accent hover:text-white transition-all px-4 py-3 rounded-lg border-2 border-accent font-bold text-lg text-center shadow-md">
-                    <svg class="w-5 h-5 mr-2 inline" fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
-                    Call (909) 342-7288
-                </a>
-                <button onclick="openConsultationModal()" class="w-full btn-primary mt-3">Get Free Consultation</button>
+        
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="#features" class="mobile-link">Features</a>
+                <a href="#testimonials" class="mobile-link">Testimonials</a>
+                <a href="#pricing" class="mobile-link">Pricing</a>
+                <button class="btn-primary mobile-btn">Get Started</button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative bg-gradient-to-br from-primary-50 to-secondary-50 overflow-hidden">
-        <div class="absolute inset-0 bg-white opacity-50"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Hero Content -->
-                <div class="text-center lg:text-left">
-                    <!-- Prominent Phone Number Display -->
-                    <div
-                        class="bg-accent text-white px-6 py-3 rounded-full inline-flex items-center mb-6 shadow-lg animate-pulse">
-                        <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Streamline Your
+                    <span class="gradient-text">Workflow</span>
+                </h1>
+                <p class="hero-description">
+                    Boost productivity with our all-in-one platform designed for modern teams. 
+                    Collaborate seamlessly, track progress, and achieve your goals faster.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary btn-large">
+                        Start Free Trial
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12,5 19,12 12,19"></polyline>
                         </svg>
-                        <span class="font-bold text-xl">Call Now: (909) 342-7288</span>
-                    </div>
-
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-text-primary mb-6 leading-tight">
-                        Get The Right Auto Parts
-                        <span class="text-accent">Every Time</span>
-                    </h1>
-                    <p class="text-xl text-text-secondary mb-8 leading-relaxed">
-                        Expert parts matching service guarantees you get the exact right part the first time - or your
-                        money back. No more frustration with wrong parts or poor quality components.
-                    </p>
-
-                    <!-- Highlighted Phone CTA -->
-                    <div
-                        class="bg-gradient-to-r from-accent to-accent-700 text-white p-6 rounded-2xl mb-8 shadow-2xl border-4 border-accent-200">
-                        <div class="text-center">
-                            <div class="text-sm font-semibold mb-2 text-accent-100">🔥 CALL FOR INSTANT PARTS MATCHING
-                            </div>
-                            <a href="tel:+19093427288" class="block">
-                                <div
-                                    class="text-4xl font-black mb-2 tracking-wider hover:scale-105 transition-transform">
-                                    (909) 342-7288</div>
-                                <div class="text-accent-100 text-lg font-semibold">Free Expert Consultation • Same-Day
-                                    Shipping</div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
-                        <a href="tel:+19093427288"
-                            class="bg-success hover:bg-success-700 text-white font-bold px-8 py-4 rounded-lg text-lg shadow-cta hover:shadow-lg transform hover:-translate-y-1 transition-all flex items-center justify-center">
-                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                            </svg>
-                            Call (909) 342-7288 Now
-                        </a>
-                        <button onclick="openConsultationModal()"
-                            class="bg-white text-primary border-2 border-primary font-semibold px-8 py-4 rounded-lg hover:bg-primary-50 transition-all">
-                            Schedule Consultation
-                        </button>
-                    </div>
-
-                    <!-- Trust Bar -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-                        <div class="flex flex-col items-center">
-                            <div class="text-2xl font-bold text-primary mb-1" id="parts-counter">50,000+</div>
-                            <div class="text-sm text-text-secondary">Parts Delivered</div>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <div class="text-2xl font-bold text-accent mb-1">98%</div>
-                            <div class="text-sm text-text-secondary">Customer Satisfaction</div>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <div class="text-2xl font-bold text-success mb-1">Same-Day</div>
-                            <div class="text-sm text-text-secondary">Shipping Available</div>
-                        </div>
-                    </div>
+                    </button>
+                    <button class="btn-secondary btn-large">Watch Demo</button>
                 </div>
-
-                <!-- Hero Image -->
-                <div class="relative">
-                    <div class="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=800"
-                            alt="Professional mechanic with quality auto parts" class="w-full h-full object-cover"
-                            onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                    </div>
-                    <!-- Floating notification -->
-                    <div class="absolute -bottom-4 -left-4 bg-white rounded-lg shadow-lg p-4 animate-pulse">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-3 h-3 bg-success rounded-full"></div>
-                            <div class="text-sm font-medium">Mike from Dallas just found his brake pads!</div>
-                        </div>
-                    </div>
-                    <!-- Phone Number Overlay -->
-                    <div class="absolute top-4 right-4 bg-accent text-white px-4 py-2 rounded-lg shadow-lg">
-                        <div class="text-center">
-                            <div class="text-xs font-semibold">CALL NOW</div>
-                            <a href="tel:+19093427288" class="text-lg font-black">(909) 342-7288</a>
-                        </div>
+            </div>
+            
+            <!-- Hero Image -->
+            <div class="hero-image">
+                <div class="dashboard-preview">
+                    <div class="dashboard-content">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                        <p class="dashboard-title">Dashboard Preview</p>
+                        <p class="dashboard-subtitle">Beautiful, intuitive interface</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem Agitation Section -->
-    <section class="py-16 bg-surface">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-                    Tired of Auto Parts Frustration?
-                </h2>
-                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
-                    You're not alone. Thousands of vehicle owners face the same problems every day.
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Everything you need to succeed</h2>
+                <p class="section-description">
+                    Powerful features designed to help your team collaborate better and achieve more.
                 </p>
             </div>
-
-            <!-- Problem Comparison -->
-            <div class="grid lg:grid-cols-2 gap-8 mb-12">
-                <!-- Problems Side -->
-                <div class="bg-error-50 border border-error-200 rounded-2xl p-8">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-error-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-error" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-bold text-error mb-4">Common Frustrations</h3>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                        </svg>
                     </div>
-                    <ul class="space-y-4">
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-error mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                                    clip-rule="evenodd" />
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p class="feature-description">Experience blazing fast performance with our optimized infrastructure.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Enterprise Security</h3>
+                    <p class="feature-description">Bank-level security with end-to-end encryption and compliance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Team Collaboration</h3>
+                    <p class="feature-description">Seamless collaboration tools for teams of any size.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10"/>
+                            <line x1="12" y1="20" x2="12" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Advanced Analytics</h3>
+                    <p class="feature-description">Deep insights and analytics to drive your business forward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Loved by thousands of teams</h2>
+                <p class="section-description">See what our customers have to say about FlowPro.</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-content">"This platform transformed how our team works. We've seen a 40% increase in productivity."</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Sarah Johnson</p>
+                        <p class="author-role">CEO, TechCorp</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-content">"The best investment we've made. The ROI was evident within the first month."</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Michael Chen</p>
+                        <p class="author-role">Product Manager, StartupXYZ</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-content">"Exceptional product with outstanding support. Highly recommended!"</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Emily Rodriguez</p>
+                        <p class="author-role">CTO, InnovateLab</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Simple, transparent pricing</h2>
+                <p class="section-description">Choose the perfect plan for your team's needs.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">Starter</h3>
+                        <div class="plan-price">
+                            <span class="price">$29</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="plan-description">Perfect for small teams getting started</p>
+                    </div>
+                    
+                    <ul class="plan-features">
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
                             </svg>
-                            <span class="text-text-primary">Wrong parts delivered - doesn't fit your vehicle</span>
+                            Up to 5 team members
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-error mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                                    clip-rule="evenodd" />
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
                             </svg>
-                            <span class="text-text-primary">Poor quality aftermarket parts that fail quickly</span>
+                            10GB storage
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-error mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                                    clip-rule="evenodd" />
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
                             </svg>
-                            <span class="text-text-primary">Weeks wasted on returns and exchanges</span>
+                            Basic analytics
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-error mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                                    clip-rule="evenodd" />
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
                             </svg>
-                            <span class="text-text-primary">No expert guidance - you're on your own</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-error mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-text-primary">Money wasted on parts that don't work</span>
+                            Email support
                         </li>
                     </ul>
+                    
+                    <button class="btn-outline">Get Started</button>
                 </div>
-
-                <!-- Solution Side -->
-                <div class="bg-success-50 border border-success-200 rounded-2xl p-8">
-                    <div class="text-center mb-6">
-                        <div
-                            class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
-                            </svg>
+                
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="plan-name">Professional</h3>
+                        <div class="plan-price">
+                            <span class="price">$79</span>
+                            <span class="period">/month</span>
                         </div>
-                        <h3 class="text-2xl font-bold text-success mb-4">UsedEnginePro Solution</h3>
+                        <p class="plan-description">Best for growing businesses</p>
                     </div>
-                    <ul class="space-y-4">
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-success mt-1 flex-shrink-0" fill="currentColor"
-                                viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
+                    
+                    <ul class="plan-features">
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
                             </svg>
-                            <span class="text-text-primary">Expert-matched parts guaranteed to fit perfectly</span>
+                            Up to 25 team members
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-success mt-1 flex-shrink-0" fill="currentColor"
-                                viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
                             </svg>
-                            <span class="text-text-primary">Only genuine OEM and premium aftermarket parts</span>
+                            100GB storage
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-success mt-1 flex-shrink-0" fill="currentColor"
-                                viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
                             </svg>
-                            <span class="text-text-primary">Same-day shipping gets you back on the road fast</span>
+                            Advanced analytics
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-success mt-1 flex-shrink-0" fill="currentColor"
-                                viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
                             </svg>
-                            <span class="text-text-primary">Personal consultation with automotive experts</span>
+                            Priority support
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-success mt-1 flex-shrink-0" fill="currentColor"
-                                viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
                             </svg>
-                            <span class="text-text-primary">Money-back guarantee - risk-free ordering</span>
+                            Custom integrations
                         </li>
                     </ul>
+                    
+                    <button class="btn-primary">Get Started</button>
                 </div>
-            </div>
-
-            <!-- Pain Point Selector -->
-            <div class="bg-white rounded-2xl shadow-lg p-8">
-                <h3 class="text-2xl font-bold text-center mb-8">What's Your Biggest Challenge?</h3>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <button onclick="selectPainPoint('diy')"
-                        class="pain-point-btn p-6 border-2 border-gray-200 rounded-xl hover:border-primary hover:bg-primary-50 transition-all text-left">
-                        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
-                            </svg>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 class="plan-name">Enterprise</h3>
+                        <div class="plan-price">
+                            <span class="price">$199</span>
+                            <span class="period">/month</span>
                         </div>
-                        <h4 class="font-semibold text-lg mb-2">DIY Repairs</h4>
-                        <p class="text-text-secondary text-sm">Need the right parts for your own vehicle maintenance and
-                            repairs</p>
-                    </button>
-
-                    <button onclick="selectPainPoint('fleet')"
-                        class="pain-point-btn p-6 border-2 border-gray-200 rounded-xl hover:border-primary hover:bg-primary-50 transition-all text-left">
-                        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10a2 2 0 00-2-2H4zm2 6a2 2 0 012-2h8a2 2 0 012 2v4a2 2 0 01-2 2H8a2 2 0 01-2-2v-4zm6 4a2 2 0 100-4 2 2 0 000 4z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <h4 class="font-semibold text-lg mb-2">Fleet Management</h4>
-                        <p class="text-text-secondary text-sm">Managing multiple vehicles and need reliable bulk parts
-                            sourcing</p>
-                    </button>
-
-                    <button onclick="selectPainPoint('shop')"
-                        class="pain-point-btn p-6 border-2 border-gray-200 rounded-xl hover:border-primary hover:bg-primary-50 transition-all text-left">
-                        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <h4 class="font-semibold text-lg mb-2">Auto Shop Operations</h4>
-                        <p class="text-text-secondary text-sm">Running a repair shop and need consistent, quality parts
-                            for customers</p>
-                    </button>
-                </div>
-
-                <!-- Dynamic Message Display -->
-                <div id="pain-point-message" class="mt-8 p-6 bg-primary-50 rounded-xl hidden">
-                    <div class="text-center">
-                        <h4 class="font-semibold text-lg mb-2 text-primary">We Understand Your Challenge</h4>
-                        <p id="pain-point-text" class="text-text-secondary mb-4"></p>
-                        <button onclick="openConsultationModal()" class="btn-primary">Get Personalized Solution</button>
+                        <p class="plan-description">For large organizations</p>
                     </div>
+                    
+                    <ul class="plan-features">
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                            Unlimited team members
+                        </li>
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                            1TB storage
+                        </li>
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                            Enterprise analytics
+                        </li>
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                            24/7 phone support
+                        </li>
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                            Custom integrations
+                        </li>
+                        <li class="feature-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20,6 9,17 4,12"/>
+                            </svg>
+                            Dedicated account manager
+                        </li>
+                    </ul>
+                    
+                    <button class="btn-outline">Get Started</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-                    How Our Expert Service Works
-                </h2>
-                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
-                    Our proven 4-step process ensures you get the exact right part every time
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to transform your workflow?</h2>
+                <p class="cta-description">
+                    Join thousands of teams who trust FlowPro to streamline their processes and boost productivity.
                 </p>
-            </div>
-
-            <!-- Process Steps -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                <!-- Step 1 -->
-                <div class="text-center group">
-                    <div class="relative mb-6">
-                        <div
-                            class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                            <span class="text-2xl font-bold text-white">1</span>
-                        </div>
-                        <div
-                            class="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Vehicle Identification</h3>
-                    <p class="text-text-secondary mb-4">Tell us your vehicle's year, make, model, and engine details</p>
-                    <button onclick="expandStep(1)" class="text-primary hover:text-primary-700 font-medium text-sm">View
-                        Details →</button>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="text-center group">
-                    <div class="relative mb-6">
-                        <div
-                            class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                            <span class="text-2xl font-bold text-white">2</span>
-                        </div>
-                        <div
-                            class="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Expert Consultation</h3>
-                    <p class="text-text-secondary mb-4">Our automotive experts analyze your specific needs and
-                        requirements</p>
-                    <button onclick="expandStep(2)" class="text-primary hover:text-primary-700 font-medium text-sm">View
-                        Details →</button>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="text-center group">
-                    <div class="relative mb-6">
-                        <div
-                            class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                            <span class="text-2xl font-bold text-white">3</span>
-                        </div>
-                        <div
-                            class="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Parts Matching</h3>
-                    <p class="text-text-secondary mb-4">We match you with the exact genuine parts that fit your vehicle
-                        perfectly</p>
-                    <button onclick="expandStep(3)" class="text-primary hover:text-primary-700 font-medium text-sm">View
-                        Details →</button>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="text-center group">
-                    <div class="relative mb-6">
-                        <div
-                            class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                            <span class="text-2xl font-bold text-white">4</span>
-                        </div>
-                        <div
-                            class="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full flex items-center justify-center">
-                            <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path
-                                    d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Fast Delivery</h3>
-                    <p class="text-text-secondary mb-4">Your parts ship the same day with tracking and delivery
-                        guarantee</p>
-                    <button onclick="expandStep(4)" class="text-primary hover:text-primary-700 font-medium text-sm">View
-                        Details →</button>
-                </div>
-            </div>
-
-            <!-- Expandable Step Details -->
-            <div id="step-details" class="hidden bg-primary-50 rounded-2xl p-8 mb-8">
-                <div id="step-content"></div>
-            </div>
-
-            <!-- Process Timeline -->
-            <div class="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8">
-                <h3 class="text-2xl font-bold text-center mb-8">Typical Timeline</h3>
-                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-primary mb-2">5 min</div>
-                        <div class="text-sm text-text-secondary">Initial Consultation</div>
-                    </div>
-                    <div class="hidden md:block w-8 h-0.5 bg-primary"></div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-primary mb-2">15 min</div>
-                        <div class="text-sm text-text-secondary">Parts Matching</div>
-                    </div>
-                    <div class="hidden md:block w-8 h-0.5 bg-primary"></div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-primary mb-2">Same Day</div>
-                        <div class="text-sm text-text-secondary">Shipping</div>
-                    </div>
-                    <div class="hidden md:block w-8 h-0.5 bg-primary"></div>
-                    <div class="text-center">
-                        <div class="text-3xl font-bold text-primary mb-2">1-3 Days</div>
-                        <div class="text-sm text-text-secondary">Delivery</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="py-16 bg-surface">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-                    Why Choose UsedEnginePro?
-                </h2>
-                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
-                    We're not just another parts supplier - we're your automotive solution partner
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Benefit 1 -->
-                <div class="card group hover:shadow-card-hover cursor-pointer" onclick="showBenefitStats('genuine')">
-                    <div
-                        class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:scale-110 transition-all">
-                        <svg class="w-8 h-8 text-primary group-hover:text-white" fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Genuine Parts Guarantee</h3>
-                    <p class="text-text-secondary mb-4">100% authentic OEM and premium aftermarket parts from trusted
-                        manufacturers</p>
-                    <div class="text-primary font-medium text-sm">99.8% authenticity rate →</div>
-                </div>
-
-                <!-- Benefit 2 -->
-                <div class="card group hover:shadow-card-hover cursor-pointer" onclick="showBenefitStats('expert')">
-                    <div
-                        class="w-16 h-16 bg-accent-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:scale-110 transition-all">
-                        <svg class="w-8 h-8 text-accent group-hover:text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path
-                                d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Expert Consultation</h3>
-                    <p class="text-text-secondary mb-4">Personal guidance from certified automotive technicians with 15+
-                        years experience</p>
-                    <div class="text-accent font-medium text-sm">50+ experts available →</div>
-                </div>
-
-                <!-- Benefit 3 -->
-                <div class="card group hover:shadow-card-hover cursor-pointer" onclick="showBenefitStats('delivery')">
-                    <div
-                        class="w-16 h-16 bg-success-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-success group-hover:scale-110 transition-all">
-                        <svg class="w-8 h-8 text-success group-hover:text-white" fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path
-                                d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                            <path
-                                d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707L16 7.586A1 1 0 0015.414 7H14z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Lightning Fast Delivery</h3>
-                    <p class="text-text-secondary mb-4">Same-day shipping available with real-time tracking and delivery
-                        guarantee</p>
-                    <div class="text-success font-medium text-sm">95% same-day shipping →</div>
-                </div>
-
-                <!-- Benefit 4 -->
-                <div class="card group hover:shadow-card-hover cursor-pointer" onclick="showBenefitStats('inventory')">
-                    <div
-                        class="w-16 h-16 bg-secondary-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:scale-110 transition-all">
-                        <svg class="w-8 h-8 text-secondary group-hover:text-white" fill="currentColor"
-                            viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M10 2L3 7v11a1 1 0 001 1h12a1 1 0 001-1V7l-7-5zM6 9.5a.5.5 0 01.5-.5h7a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-7a.5.5 0 01-.5-.5v-1zm0 3a.5.5 0 01.5-.5h7a.5.5 0 01.5.5v1a.5.5 0 01-.5.5h-7a.5.5 0 01-.5-.5v-1z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-3">Massive Inventory</h3>
-                    <p class="text-text-secondary mb-4">Over 2 million parts in stock covering 95% of vehicles on the
-                        road today</p>
-                    <div class="text-secondary font-medium text-sm">2M+ parts available →</div>
-                </div>
-            </div>
-
-            <!-- Benefit Stats Modal -->
-            <div id="benefit-stats" class="hidden mt-8 bg-white rounded-2xl shadow-lg p-8">
-                <div id="benefit-stats-content"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof Section -->
-    <section id="testimonials" class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-                    Trusted by Thousands of Satisfied Customers
-                </h2>
-                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
-                    Don't just take our word for it - hear from real customers who got the right parts
-                </p>
-            </div>
-
-            <!-- Testimonials Carousel -->
-            <div class="relative mb-16">
-                <div id="testimonials-container" class="overflow-hidden">
-                    <div id="testimonials-track" class="flex transition-transform duration-500 ease-in-out">
-                        <!-- Testimonial 1 -->
-                        <div class="w-full flex-shrink-0 px-4">
-                            <div class="bg-primary-50 rounded-2xl p-8 max-w-4xl mx-auto">
-                                <div class="flex items-center mb-6">
-                                    <img src="https://images.pixabay.com/photos/2507/man-person-male-face.jpg?auto=compress&cs=tinysrgb&w=150"
-                                        alt="Mike Rodriguez" class="w-16 h-16 rounded-full object-cover mr-4"
-                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                                    <div>
-                                        <h4 class="font-semibold text-lg">Mike Rodriguez</h4>
-                                        <p class="text-text-secondary">Professional Mechanic, Dallas TX</p>
-                                        <div class="flex text-yellow-400 mt-1">
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <blockquote class="text-lg text-text-primary italic mb-4">
-                                    "I've been running my shop for 12 years and UsedEnginePro is hands down the best
-                                    supplier I've worked with. Their experts helped me find the exact brake rotors for a
-                                    2018 Camry hybrid - something I couldn't find anywhere else. Same-day shipping saved
-                                    my customer's weekend plans!"
-                                </blockquote>
-                                <div class="text-sm text-text-secondary">
-                                    Verified Purchase • Brake Rotors for 2018 Toyota Camry Hybrid
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 2 -->
-                        <div class="w-full flex-shrink-0 px-4">
-                            <div class="bg-accent-50 rounded-2xl p-8 max-w-4xl mx-auto">
-                                <div class="flex items-center mb-6">
-                                    <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150"
-                                        alt="Sarah Chen" class="w-16 h-16 rounded-full object-cover mr-4"
-                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                                    <div>
-                                        <h4 class="font-semibold text-lg">Sarah Chen</h4>
-                                        <p class="text-text-secondary">Fleet Manager, Seattle WA</p>
-                                        <div class="flex text-yellow-400 mt-1">
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <blockquote class="text-lg text-text-primary italic mb-4">
-                                    "Managing 50+ delivery vehicles means I need reliable parts fast. UsedEnginePro's
-                                    bulk ordering and expert consultation has saved us thousands in downtime costs.
-                                    Their team knows exactly what we need for our Ford Transit fleet."
-                                </blockquote>
-                                <div class="text-sm text-text-secondary">
-                                    Verified Purchase • Fleet Maintenance Parts for Ford Transit Vans
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 3 -->
-                        <div class="w-full flex-shrink-0 px-4">
-                            <div class="bg-success-50 rounded-2xl p-8 max-w-4xl mx-auto">
-                                <div class="flex items-center mb-6">
-                                    <img src="https://images.pixabay.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150"
-                                        alt="David Thompson" class="w-16 h-16 rounded-full object-cover mr-4"
-                                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                                    <div>
-                                        <h4 class="font-semibold text-lg">David Thompson</h4>
-                                        <p class="text-text-secondary">DIY Enthusiast, Phoenix AZ</p>
-                                        <div class="flex text-yellow-400 mt-1">
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                                                <path
-                                                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <blockquote class="text-lg text-text-primary italic mb-4">
-                                    "As someone who loves working on my classic Mustang, finding the right parts can be
-                                    a nightmare. UsedEnginePro's consultation service connected me with an expert who
-                                    knew exactly what I needed for my '67 restoration. Genuine Ford parts delivered in 2
-                                    days!"
-                                </blockquote>
-                                <div class="text-sm text-text-secondary">
-                                    Verified Purchase • Restoration Parts for 1967 Ford Mustang
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Carousel Controls -->
-                <button onclick="previousTestimonial()"
-                    class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all">
-                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
-                <button onclick="nextTestimonial()"
-                    class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all">
-                    <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
-
-                <!-- Carousel Indicators -->
-                <div class="flex justify-center mt-8 space-x-2">
-                    <button onclick="goToTestimonial(0)"
-                        class="testimonial-indicator w-3 h-3 rounded-full bg-primary transition-all"></button>
-                    <button onclick="goToTestimonial(1)"
-                        class="testimonial-indicator w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
-                    <button onclick="goToTestimonial(2)"
-                        class="testimonial-indicator w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
-                </div>
-            </div>
-
-            <!-- Trust Indicators -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-primary mb-2">50,000+</div>
-                    <div class="text-sm text-text-secondary">Parts Delivered</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-accent mb-2">98%</div>
-                    <div class="text-sm text-text-secondary">Customer Satisfaction</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-success mb-2">15+</div>
-                    <div class="text-sm text-text-secondary">Years Experience</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold text-secondary mb-2">2M+</div>
-                    <div class="text-sm text-text-secondary">Parts in Stock</div>
-                </div>
-            </div>
-
-            <!-- Partner Logos -->
-            <div class="bg-surface rounded-2xl p-8">
-                <h3 class="text-xl font-semibold text-center mb-8">Trusted by Leading Auto Shops & Dealerships</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
-                    <div class="text-center">
-                        <div class="bg-gray-200 rounded-lg h-16 flex items-center justify-center">
-                            <span class="font-bold text-gray-600">FORD</span>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="bg-gray-200 rounded-lg h-16 flex items-center justify-center">
-                            <span class="font-bold text-gray-600">TOYOTA</span>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="bg-gray-200 rounded-lg h-16 flex items-center justify-center">
-                            <span class="font-bold text-gray-600">HONDA</span>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <div class="bg-gray-200 rounded-lg h-16 flex items-center justify-center">
-                            <span class="font-bold text-gray-600">CHEVROLET</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Special Offer Section -->
-    <section class="py-16 bg-gradient-to-r from-accent-600 to-accent-700 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                    Limited Time: Free Expert Consultation
-                </h2>
-                <p class="text-xl text-accent-100 max-w-3xl mx-auto">
-                    Get personalized parts matching and expert advice - normally $75, absolutely free for new customers
-                </p>
-            </div>
-
-            <div class="bg-white rounded-2xl p-8 max-w-4xl mx-auto text-text-primary">
-                <div class="grid lg:grid-cols-2 gap-8 items-center">
-                    <!-- Offer Details -->
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6">What You Get (Value: $275)</h3>
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-start space-x-3">
-                                <svg class="w-6 h-6 text-success mt-1 flex-shrink-0" fill="currentColor"
-                                    viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                <div>
-                                    <span class="font-semibold">Personal Expert Consultation</span>
-                                    <span class="text-text-secondary block text-sm">15-minute call with certified
-                                        technician ($75 value)</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start space-x-3">
-                                <svg class="w-6 h-6 text-success mt-1 flex-shrink-0" fill="currentColor"
-                                    viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                <div>
-                                    <span class="font-semibold">Custom Parts Compatibility Report</span>
-                                    <span class="text-text-secondary block text-sm">Detailed analysis for your specific
-                                        vehicle ($100 value)</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start space-x-3">
-                                <svg class="w-6 h-6 text-success mt-1 flex-shrink-0" fill="currentColor"
-                                    viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                <div>
-                                    <span class="font-semibold">Priority Same-Day Shipping</span>
-                                    <span class="text-text-secondary block text-sm">Skip the line for urgent orders ($50
-                                        value)</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start space-x-3">
-                                <svg class="w-6 h-6 text-success mt-1 flex-shrink-0" fill="currentColor"
-                                    viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd"
-                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                <div>
-                                    <span class="font-semibold">15% Discount on First Order</span>
-                                    <span class="text-text-secondary block text-sm">Exclusive savings for consultation
-                                        customers ($50+ value)</span>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <!-- Urgency Timer -->
-                        <div class="bg-error-50 border border-error-200 rounded-lg p-4 mb-6">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <div class="font-semibold text-error">Limited Slots Available Today</div>
-                                    <div class="text-sm text-text-secondary">Only 3 consultation slots remaining</div>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-2xl font-bold text-error" id="countdown-timer">23:45</div>
-                                    <div class="text-xs text-text-secondary">Minutes Left</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Lead Capture Form -->
-                    <div class="bg-surface rounded-xl p-6">
-                        <h4 class="text-xl font-semibold mb-6 text-center">Claim Your Free Consultation</h4>
-                        <form id="consultation-form" class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-medium mb-2">Email Address</label>
-                                <input type="email" id="email" name="email" required class="form-input"
-                                    placeholder="your@email.com" onchange="showVehicleSelector()" />
-                            </div>
-
-                            <div id="vehicle-selector" class="hidden space-y-4">
-                                <div class="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label class="block text-sm font-medium mb-2">Year</label>
-                                        <select id="vehicle-year" name="year" class="form-input">
-                                            <option value>Select Year</option>
-                                            <option value="2024">2024</option>
-                                            <option value="2023">2023</option>
-                                            <option value="2022">2022</option>
-                                            <option value="2021">2021</option>
-                                            <option value="2020">2020</option>
-                                        </select>
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium mb-2">Make</label>
-                                        <select id="vehicle-make" name="make" class="form-input"
-                                            onchange="updateModels()">
-                                            <option value>Select Make</option>
-                                            <option value="ford">Ford</option>
-                                            <option value="toyota">Toyota</option>
-                                            <option value="honda">Honda</option>
-                                            <option value="chevrolet">Chevrolet</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label class="block text-sm font-medium mb-2">Model</label>
-                                    <select id="vehicle-model" name="model" class="form-input"
-                                        onchange="showPhoneField()">
-                                        <option value>Select Model</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div id="phone-field" class="hidden">
-                                <label class="block text-sm font-medium mb-2">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" class="form-input"
-                                    placeholder="(555) 123-4567" />
-                            </div>
-
-                            <div id="contact-time" class="hidden">
-                                <label class="block text-sm font-medium mb-2">Preferred Contact Time</label>
-                                <select id="preferred-time" name="preferred_time" class="form-input">
-                                    <option value>Select Time</option>
-                                    <option value="morning">Morning (9 AM - 12 PM)</option>
-                                    <option value="afternoon">Afternoon (12 PM - 5 PM)</option>
-                                    <option value="evening">Evening (5 PM - 8 PM)</option>
-                                </select>
-                            </div>
-
-                            <button type="submit" class="w-full btn-primary text-lg py-4 mt-6">
-                                Claim Free Consultation Now
-                            </button>
-                        </form>
-
-                        <div class="text-center mt-4">
-                            <p class="text-xs text-text-secondary">
-                                No spam. We'll only contact you about your consultation.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="py-16 bg-surface">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary mb-4">
-                    Frequently Asked Questions
-                </h2>
-                <p class="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
-                    Get instant answers to common questions about our parts and service
-                </p>
-
-                <!-- FAQ Search -->
-                <div class="max-w-md mx-auto">
-                    <div class="relative">
-                        <input type="text" id="faq-search" placeholder="Search FAQs..." class="form-input pl-10 pr-4"
-                            onkeyup="filterFAQs()" />
-                        <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-text-muted"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-4xl mx-auto">
-                <div id="faq-container" class="space-y-4">
-                    <!-- FAQ Item 1 -->
-                    <div class="faq-item bg-white rounded-lg border border-gray-200"
-                        data-keywords="genuine authentic oem quality parts">
-                        <button
-                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-                            onclick="toggleFAQ(this)">
-                            <span class="font-semibold text-lg">How do I know the parts are genuine and not
-                                counterfeit?</span>
-                            <svg class="w-5 h-5 text-text-secondary transform transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4">
-                            <p class="text-text-secondary">All our parts come directly from authorized manufacturers and
-                                distributors. Every part includes original packaging, serial numbers, and authenticity
-                                certificates. We provide a 100% authenticity guarantee - if any part is found to be
-                                counterfeit, we'll refund double your money and cover all return shipping costs.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 2 -->
-                    <div class="faq-item bg-white rounded-lg border border-gray-200"
-                        data-keywords="return policy guarantee money back refund">
-                        <button
-                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-                            onclick="toggleFAQ(this)">
-                            <span class="font-semibold text-lg">What if the part doesn't fit my vehicle?</span>
-                            <svg class="w-5 h-5 text-text-secondary transform transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4">
-                            <p class="text-text-secondary">We offer a 30-day perfect fit guarantee. If the part doesn't
-                                fit your vehicle exactly as described, return it for a full refund plus free return
-                                shipping. Our expert consultation process has a 99.2% accuracy rate, so wrong parts are
-                                extremely rare.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 3 -->
-                    <div class="faq-item bg-white rounded-lg border border-gray-200"
-                        data-keywords="shipping delivery time fast same day">
-                        <button
-                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-                            onclick="toggleFAQ(this)">
-                            <span class="font-semibold text-lg">How fast can you ship my parts?</span>
-                            <svg class="w-5 h-5 text-text-secondary transform transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4">
-                            <p class="text-text-secondary">95% of our orders ship the same day when placed before 2 PM
-                                EST. We offer overnight, 2-day, and standard shipping options. Emergency orders can be
-                                expedited for same-day delivery in major metropolitan areas. All shipments include
-                                real-time tracking.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 4 -->
-                    <div class="faq-item bg-white rounded-lg border border-gray-200"
-                        data-keywords="consultation expert advice free cost">
-                        <button
-                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-                            onclick="toggleFAQ(this)">
-                            <span class="font-semibold text-lg">Is the expert consultation really free?</span>
-                            <svg class="w-5 h-5 text-text-secondary transform transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4">
-                            <p class="text-text-secondary">Yes, absolutely free for new customers. This includes a
-                                15-minute consultation with a certified technician, custom compatibility report, and
-                                personalized parts recommendations. There's no obligation to purchase, and we never
-                                share your information with third parties.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 5 -->
-                    <div class="faq-item bg-white rounded-lg border border-gray-200"
-                        data-keywords="price cost expensive cheap competitive">
-                        <button
-                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-                            onclick="toggleFAQ(this)">
-                            <span class="font-semibold text-lg">Are your prices competitive with other suppliers?</span>
-                            <svg class="w-5 h-5 text-text-secondary transform transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4">
-                            <p class="text-text-secondary">We guarantee competitive pricing on all parts. If you find
-                                the same genuine part for less elsewhere, we'll match the price plus give you an
-                                additional 5% discount. Our bulk purchasing power and direct manufacturer relationships
-                                allow us to offer premium parts at competitive prices.</p>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 6 -->
-                    <div class="faq-item bg-white rounded-lg border border-gray-200"
-                        data-keywords="warranty guarantee coverage protection">
-                        <button
-                            class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
-                            onclick="toggleFAQ(this)">
-                            <span class="font-semibold text-lg">What warranty comes with the parts?</span>
-                            <svg class="w-5 h-5 text-text-secondary transform transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-                        <div class="faq-answer hidden px-6 pb-4">
-                            <p class="text-text-secondary">All parts come with manufacturer warranties ranging from 1-5
-                                years depending on the component. We also provide our own 90-day installation guarantee
-                                - if a part fails due to manufacturing defect within 90 days, we'll replace it free and
-                                cover labor costs up to $200.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- No Results Message -->
-                <div id="no-faq-results" class="hidden text-center py-8">
-                    <p class="text-text-secondary">No FAQs match your search. <button onclick="clearFAQSearch()"
-                            class="text-primary hover:underline">Clear search</button> or <button
-                            onclick="openConsultationModal()" class="text-primary hover:underline">ask our experts
-                            directly</button>.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA Section -->
-    <section class="py-16 bg-gradient-to-br from-primary to-secondary text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <!-- Prominent Phone Display -->
-            <div class="bg-accent-600 border-4 border-accent-300 rounded-3xl p-8 mb-8 shadow-2xl">
-                <div class="text-center">
-                    <div class="text-lg font-bold mb-3 text-accent-100">🚀 READY FOR EXPERT PARTS MATCHING?</div>
-                    <a href="tel:+19093427288" class="block hover:scale-105 transition-transform">
-                        <div class="text-5xl md:text-6xl font-black mb-3 tracking-wide text-white drop-shadow-lg">(909)
-                            342-7288</div>
-                        <div class="text-xl font-semibold text-accent-100">Call Now • Free Consultation • Same-Day
-                            Shipping</div>
-                    </a>
-                </div>
-            </div>
-
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Get the Right Parts for Your Vehicle?
-            </h2>
-            <p class="text-xl text-primary-100 max-w-3xl mx-auto mb-8">
-                Join thousands of satisfied customers who never worry about wrong parts again.
-                Get your free expert consultation today.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <a href="tel:+19093427288"
-                    class="bg-accent hover:bg-accent-700 text-white font-bold px-8 py-4 rounded-lg text-xl transition-all transform hover:-translate-y-1 shadow-lg flex items-center justify-center">
-                    <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                        <path
-                            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
-                    Call (909) 342-7288
-                </a>
-                <button onclick="openConsultationModal()"
-                    class="bg-white text-primary hover:bg-primary-50 font-semibold px-8 py-4 rounded-lg text-lg transition-all border-2 border-white">
-                    Schedule Online Consultation
-                </button>
-            </div>
-
-            <!-- Success Metrics -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <div class="text-center">
-                    <div class="text-4xl font-bold mb-2">50,000+</div>
-                    <div class="text-primary-200">Happy Customers</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl font-bold mb-2">99.2%</div>
-                    <div class="text-primary-200">Perfect Fit Rate</div>
-                </div>
-                <div class="text-center">
-                    <div class="text-4xl font-bold mb-2">24/7</div>
-                    <div class="text-primary-200">Expert Support</div>
+                <div class="cta-buttons">
+                    <button class="btn-white">Start Free Trial</button>
+                    <button class="btn-outline-white">Contact Sales</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-text-primary text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <!-- Company Info -->
-                <div>
-                    <div class="flex items-center mb-4">
-                        <svg class="h-8 w-8 text-accent" viewBox="0 0 40 40" fill="currentColor">
-                            <path
-                                d="M20 4L4 12v16l16 8 16-8V12L20 4zm0 4.5L30.5 14 20 19.5 9.5 14 20 8.5zM8 16.5l10 5v11l-10-5v-11zm12 16v-11l10-5v11l-10 5z" />
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
                         </svg>
-                        <span class="ml-3 text-xl font-bold">UsedEnginePro</span>
                     </div>
-                    <p class="text-gray-300 mb-4">The only auto parts supplier that guarantees you get the exact right
-                        part the first time.</p>
-                    <!-- Highlighted Phone Number -->
-                    <div class="bg-accent rounded-lg p-4 mb-4">
-                        <div class="text-center">
-                            <div class="text-sm font-semibold text-accent-100 mb-1">CALL FOR EXPERT HELP</div>
-                            <a href="tel:+19093427288"
-                                class="text-2xl font-black text-white hover:text-accent-100 transition-colors">(909)
-                                342-7288</a>
-                            <div class="text-xs text-accent-100 mt-1">Free Consultation Available</div>
-                        </div>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="javascript:void(0)" class="text-gray-300 hover:text-accent transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
-                            </svg>
-                        </a>
-                        <a href="javascript:void(0)" class="text-gray-300 hover:text-accent transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" />
-                            </svg>
-                        </a>
-                        <a href="javascript:void(0)" class="text-gray-300 hover:text-accent transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                            </svg>
-                        </a>
-                    </div>
+                    <span class="brand-name">FlowPro</span>
                 </div>
-
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#parts-catalog" class="text-gray-300 hover:text-accent transition-colors">Parts
-                                Catalog</a></li>
-                        <li><a href="#how-it-works" class="text-gray-300 hover:text-accent transition-colors">How It
-                                Works</a></li>
-                        <li><a href="#testimonials" class="text-gray-300 hover:text-accent transition-colors">Customer
-                                Reviews</a></li>
-                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-accent transition-colors">Track
-                                Order</a></li>
-                        <li><a href="javascript:void(0)"
-                                class="text-gray-300 hover:text-accent transition-colors">Return Policy</a></li>
-                    </ul>
+                <p class="footer-description">
+                    Streamline your workflow and boost productivity with FlowPro.
+                </p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link">Contact Support</a>
                 </div>
-
-                <!-- Support -->
-                <div>
-                    <h4 class="font-semibold mb-4">Customer Support</h4>
-                    <ul class="space-y-2">
-                        <li>
-                            <a href="tel:+19093427288"
-                                class="text-accent hover:text-accent-300 transition-colors font-bold text-lg flex items-center">
-                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                    <path
-                                        d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                                </svg>
-                                (909) 342-7288
-                            </a>
-                        </li>
-                        <li><a href="mailto:support@usedengineprocom"
-                                class="text-gray-300 hover:text-accent transition-colors">support@usedenginepro.com</a>
-                        </li>
-                        <li><span class="text-gray-300">Mon-Fri: 7 AM - 9 PM EST</span></li>
-                        <li><span class="text-gray-300">Sat-Sun: 9 AM - 6 PM EST</span></li>
-                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-accent transition-colors">Live
-                                Chat Support</a></li>
-                    </ul>
-                </div>
-
-                <!-- Certifications -->
-                <div>
-                    <h4 class="font-semibold mb-4">Trust & Security</h4>
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-2">
-                            <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-300 text-sm">SSL Secured</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-300 text-sm">BBB A+ Rating</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-300 text-sm">ASE Certified</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <svg class="w-5 h-5 text-success" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd"
-                                    d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <span class="text-gray-300 text-sm">Money Back Guarantee</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bottom Footer -->
-            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-300 text-sm">© 2025 UsedEnginePro. All Rights Reserved.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="javascript:void(0)"
-                        class="text-gray-300 hover:text-accent text-sm transition-colors">Privacy Policy</a>
-                    <a href="javascript:void(0)" class="text-gray-300 hover:text-accent text-sm transition-colors">Terms
-                        of Service</a>
-                    <a href="javascript:void(0)"
-                        class="text-gray-300 hover:text-accent text-sm transition-colors">Sitemap</a>
+                <div class="footer-bottom">
+                    <p class="copyright">© 2025 FlowPro. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Consultation Modal -->
-    <div id="consultation-modal" class="modal-overlay hidden" onclick="closeModal(event)">
-        <div class="modal-content">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold">Get Your Free Consultation</h3>
-                <button onclick="closeConsultationModal()" class="text-gray-400 hover:text-gray-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-
-            <form id="modal-consultation-form" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium mb-2">Email Address</label>
-                    <input type="email" name="email" required class="form-input" placeholder="your@email.com" />
-                </div>
-
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-medium mb-2">Year</label>
-                        <select name="year" class="form-input">
-                            <option value>Select Year</option>
-                            <option value="2024">2024</option>
-                            <option value="2023">2023</option>
-                            <option value="2022">2022</option>
-                            <option value="2021">2021</option>
-                            <option value="2020">2020</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium mb-2">Make</label>
-                        <select name="make" class="form-input">
-                            <option value>Select Make</option>
-                            <option value="ford">Ford</option>
-                            <option value="toyota">Toyota</option>
-                            <option value="honda">Honda</option>
-                            <option value="chevrolet">Chevrolet</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium mb-2">Model</label>
-                    <select name="model" class="form-input">
-                        <option value>Select Model</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium mb-2">Phone Number</label>
-                    <input type="tel" name="phone" class="form-input" placeholder="(555) 123-4567" />
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium mb-2">What parts do you need?</label>
-                    <textarea name="parts_needed" class="form-input" rows="3"
-                        placeholder="Describe the parts you're looking for..."></textarea>
-                </div>
-
-                <button type="submit" class="w-full btn-primary text-lg py-3">
-                    Schedule Free Consultation
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Catalog Modal -->
-    <div id="catalog-modal" class="modal-overlay hidden" onclick="closeModal(event)">
-        <div class="modal-content max-w-4xl">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold">Browse Parts Catalog</h3>
-                <button onclick="closeCatalogModal()" class="text-gray-400 hover:text-gray-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="card text-center">
-                    <img src="https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=300"
-                        alt="Engine Parts" class="w-full h-32 object-cover rounded-lg mb-4"
-                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                    <h4 class="font-semibold mb-2">Engine Parts</h4>
-                    <p class="text-sm text-text-secondary">Filters, belts, gaskets, and more</p>
-                </div>
-
-                <div class="card text-center">
-                    <img src="https://images.pixabay.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=300"
-                        alt="Brake Parts" class="w-full h-32 object-cover rounded-lg mb-4"
-                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                    <h4 class="font-semibold mb-2">Brake System</h4>
-                    <p class="text-sm text-text-secondary">Pads, rotors, calipers, fluid</p>
-                </div>
-
-                <div class="card text-center">
-                    <img src="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=300&auto=format&fit=crop"
-                        alt="Suspension Parts" class="w-full h-32 object-cover rounded-lg mb-4"
-                        onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
-                    <h4 class="font-semibold mb-2">Suspension</h4>
-                    <p class="text-sm text-text-secondary">Shocks, struts, springs</p>
-                </div>
-            </div>
-
-            <div class="text-center mt-8">
-                <button onclick="openConsultationModal(); closeCatalogModal();" class="btn-primary">
-                    Get Expert Help Finding Parts
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sticky Mobile CTA -->
-    <div class="fixed bottom-0 left-0 right-0 bg-accent text-white p-4 md:hidden z-50" id="sticky-cta">
-        <div class="flex justify-between items-center">
-            <div>
-                <div class="font-semibold">Free Consultation</div>
-                <div class="text-xs text-accent-100">Get the right parts guaranteed</div>
-            </div>
-            <button onclick="openConsultationModal()" class="bg-white text-accent px-4 py-2 rounded-lg font-semibold">
-                Get Started
-            </button>
-        </div>
-    </div>
-
-    <!-- Real-time Notifications -->
-    <div id="notification-bar" class="fixed top-20 right-4 bg-white rounded-lg shadow-lg p-4 z-40 hidden">
-        <div class="flex items-center space-x-3">
-            <div class="w-3 h-3 bg-success rounded-full animate-pulse"></div>
-            <div class="text-sm" id="notification-text"></div>
-        </div>
-    </div>
-
-    <script>
-        // Global variables
-        let currentTestimonial = 0;
-        let testimonialInterval;
-        let countdownInterval;
-        let notificationInterval;
-
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function () {
-            startTestimonialCarousel();
-            startCountdownTimer();
-            startNotifications();
-            animateCounters();
-        });
-
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        }
-
-        // Modal functions
-        function openConsultationModal() {
-            document.getElementById('consultation-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeConsultationModal() {
-            document.getElementById('consultation-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        function openCatalogModal() {
-            document.getElementById('catalog-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeCatalogModal() {
-            document.getElementById('catalog-modal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        function closeModal(event) {
-            if (event.target === event.currentTarget) {
-                closeConsultationModal();
-                closeCatalogModal();
-            }
-        }
-
-        // Pain point selector
-        function selectPainPoint(type) {
-            const messages = {
-                'diy': 'DIY repairs can be frustrating when you get the wrong parts. Our experts will ensure you get exactly what you need for your project, saving you time and money.',
-                'fleet': 'Fleet downtime costs money. Our bulk ordering and expert consultation keeps your vehicles running with minimal interruption to your operations.',
-                'shop': 'Your customers depend on you for reliable repairs. Our genuine parts and expert support help you maintain your reputation for quality work.'
-            };
-
-            document.getElementById('pain-point-text').textContent = messages[type];
-            document.getElementById('pain-point-message').classList.remove('hidden');
-
-            // Update button styles
-            document.querySelectorAll('.pain-point-btn').forEach(btn => {
-                btn.classList.remove('border-primary', 'bg-primary-50');
-                btn.classList.add('border-gray-200');
-            });
-            event.target.closest('.pain-point-btn').classList.add('border-primary', 'bg-primary-50');
-        }
-
-        // Process steps
-        function expandStep(stepNumber) {
-            const stepDetails = {
-                1: {
-                    title: 'Vehicle Identification Process',
-                    content: 'Our system uses your VIN number and vehicle details to create a precise profile. We verify year, make, model, engine type, and any special packages or options that affect parts compatibility.'
-                },
-                2: {
-                    title: 'Expert Consultation Details',
-                    content: 'Connect with ASE-certified technicians who review your specific needs. They consider your driving conditions, repair history, and budget to recommend the best parts for your situation.'
-                },
-                3: {
-                    title: 'Parts Matching Technology',
-                    content: 'Our proprietary database cross-references millions of parts with vehicle specifications. We verify fitment through multiple sources and provide detailed compatibility reports.'
-                },
-                4: {
-                    title: 'Delivery & Support',
-                    content: 'Parts ship from our network of warehouses for fastest delivery. You receive tracking information, installation guides, and ongoing support throughout the process.'
-                }
-            };
-
-            const details = stepDetails[stepNumber];
-            document.getElementById('step-content').innerHTML = `
-                <h4 class="text-xl font-semibold mb-4">${details.title}</h4>
-                <p class="text-text-secondary">${details.content}</p>
-            `;
-            document.getElementById('step-details').classList.remove('hidden');
-        }
-
-        // Benefits stats
-        function showBenefitStats(type) {
-            const stats = {
-                'genuine': {
-                    title: 'Genuine Parts Guarantee',
-                    stats: [
-                        { label: 'Authenticity Rate', value: '99.8%' },
-                        { label: 'Manufacturer Partnerships', value: '150+' },
-                        { label: 'Quality Inspections', value: '100%' }
-                    ]
-                },
-                'expert': {
-                    title: 'Expert Consultation',
-                    stats: [
-                        { label: 'Certified Technicians', value: '50+' },
-                        { label: 'Years Combined Experience', value: '750+' },
-                        { label: 'Consultation Accuracy', value: '99.2%' }
-                    ]
-                },
-                'delivery': {
-                    title: 'Fast Delivery',
-                    stats: [
-                        { label: 'Same-Day Shipping', value: '95%' },
-                        { label: 'Average Delivery Time', value: '1.8 days' },
-                        { label: 'On-Time Delivery', value: '98.5%' }
-                    ]
-                },
-                'inventory': {
-                    title: 'Massive Inventory',
-                    stats: [
-                        { label: 'Parts in Stock', value: '2M+' },
-                        { label: 'Vehicle Coverage', value: '95%' },
-                        { label: 'Availability Rate', value: '97%' }
-                    ]
-                }
-            };
-
-            const data = stats[type];
-            const statsHtml = data.stats.map(stat => `
-                <div class="text-center">
-                    <div class="text-2xl font-bold text-primary mb-1">${stat.value}</div>
-                    <div class="text-sm text-text-secondary">${stat.label}</div>
-                </div>
-            `).join('');
-
-            document.getElementById('benefit-stats-content').innerHTML = `
-                <h4 class="text-xl font-semibold mb-6 text-center">${data.title} - By the Numbers</h4>
-                <div class="grid grid-cols-3 gap-6">${statsHtml}</div>
-            `;
-            document.getElementById('benefit-stats').classList.remove('hidden');
-        }
-
-        // Testimonial carousel
-        function startTestimonialCarousel() {
-            testimonialInterval = setInterval(() => {
-                nextTestimonial();
-            }, 8000);
-        }
-
-        function nextTestimonial() {
-            currentTestimonial = (currentTestimonial + 1) % 3;
-            updateTestimonialDisplay();
-        }
-
-        function previousTestimonial() {
-            currentTestimonial = currentTestimonial === 0 ? 2 : currentTestimonial - 1;
-            updateTestimonialDisplay();
-        }
-
-        function goToTestimonial(index) {
-            currentTestimonial = index;
-            updateTestimonialDisplay();
-        }
-
-        function updateTestimonialDisplay() {
-            const track = document.getElementById('testimonials-track');
-            track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
-
-            // Update indicators
-            document.querySelectorAll('.testimonial-indicator').forEach((indicator, index) => {
-                if (index === currentTestimonial) {
-                    indicator.classList.remove('bg-gray-300');
-                    indicator.classList.add('bg-primary');
-                } else {
-                    indicator.classList.remove('bg-primary');
-                    indicator.classList.add('bg-gray-300');
-                }
-            });
-        }
-
-        // Progressive form functionality
-        function showVehicleSelector() {
-            const email = document.getElementById('email').value;
-            if (email && email.includes('@')) {
-                document.getElementById('vehicle-selector').classList.remove('hidden');
-            }
-        }
-
-        function updateModels() {
-            const make = document.getElementById('vehicle-make').value;
-            const modelSelect = document.getElementById('vehicle-model');
-
-            const models = {
-                'ford': ['F-150', 'Mustang', 'Explorer', 'Escape', 'Focus'],
-                'toyota': ['Camry', 'Corolla', 'RAV4', 'Highlander', 'Prius'],
-                'honda': ['Civic', 'Accord', 'CR-V', 'Pilot', 'Fit'],
-                'chevrolet': ['Silverado', 'Equinox', 'Malibu', 'Tahoe', 'Cruze']
-            };
-
-            modelSelect.innerHTML = '<option value="">Select Model</option>';
-            if (models[make]) {
-                models[make].forEach(model => {
-                    modelSelect.innerHTML += `<option value="${model.toLowerCase()}">${model}</option>`;
-                });
-            }
-        }
-
-        function showPhoneField() {
-            const model = document.getElementById('vehicle-model').value;
-            if (model) {
-                document.getElementById('phone-field').classList.remove('hidden');
-                document.getElementById('contact-time').classList.remove('hidden');
-            }
-        }
-
-        // FAQ functionality
-        function toggleFAQ(button) {
-            const answer = button.nextElementSibling;
-            const icon = button.querySelector('svg');
-
-            if (answer.classList.contains('hidden')) {
-                answer.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                answer.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
-
-        function filterFAQs() {
-            const searchTerm = document.getElementById('faq-search').value.toLowerCase();
-            const faqItems = document.querySelectorAll('.faq-item');
-            let hasResults = false;
-
-            faqItems.forEach(item => {
-                const keywords = item.dataset.keywords.toLowerCase();
-                const question = item.querySelector('span').textContent.toLowerCase();
-
-                if (keywords.includes(searchTerm) || question.includes(searchTerm)) {
-                    item.style.display = 'block';
-                    hasResults = true;
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-
-            document.getElementById('no-faq-results').classList.toggle('hidden', hasResults);
-        }
-
-        function clearFAQSearch() {
-            document.getElementById('faq-search').value = '';
-            filterFAQs();
-        }
-
-        // Countdown timer
-        function startCountdownTimer() {
-            let minutes = 23;
-            let seconds = 45;
-
-            countdownInterval = setInterval(() => {
-                if (seconds === 0) {
-                    if (minutes === 0) {
-                        minutes = 23;
-                        seconds = 59;
-                    } else {
-                        minutes--;
-                        seconds = 59;
-                    }
-                } else {
-                    seconds--;
-                }
-
-                document.getElementById('countdown-timer').textContent =
-                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }, 1000);
-        }
-
-        // Real-time notifications
-        function startNotifications() {
-            const notifications = [
-                'Mike from Dallas just found his brake pads!',
-                'Sarah in Seattle ordered transmission fluid',
-                'David from Phoenix got his alternator',
-                'Lisa in Miami found her air filter',
-                'Tom from Chicago ordered spark plugs'
-            ];
-
-            let currentNotification = 0;
-
-            notificationInterval = setInterval(() => {
-                const notificationBar = document.getElementById('notification-bar');
-                const notificationText = document.getElementById('notification-text');
-
-                notificationText.textContent = notifications[currentNotification];
-                notificationBar.classList.remove('hidden');
-
-                setTimeout(() => {
-                    notificationBar.classList.add('hidden');
-                }, 4000);
-
-                currentNotification = (currentNotification + 1) % notifications.length;
-            }, 10000);
-        }
-
-        // Counter animation
-        function animateCounters() {
-            const counter = document.getElementById('parts-counter');
-            let count = 45000;
-            const target = 50000;
-            const increment = (target - count) / 100;
-
-            const timer = setInterval(() => {
-                count += increment;
-                if (count >= target) {
-                    count = target;
-                    clearInterval(timer);
-                }
-                counter.textContent = Math.floor(count).toLocaleString() + '+';
-            }, 50);
-        }
-
-        // Form submissions
-        document.getElementById('consultation-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Show success message
-            alert('Thank you! Your consultation has been scheduled. We\'ll contact you within 15 minutes.');
-
-            // Reset form
-            this.reset();
-            document.getElementById('vehicle-selector').classList.add('hidden');
-            document.getElementById('phone-field').classList.add('hidden');
-            document.getElementById('contact-time').classList.add('hidden');
-        });
-
-        document.getElementById('modal-consultation-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Show success message
-            alert('Thank you! Your consultation has been scheduled. We\'ll contact you within 15 minutes.');
-
-            // Close modal and reset form
-            closeConsultationModal();
-            this.reset();
-        });
-
-        // Sticky CTA scroll behavior
-        let lastScrollTop = 0;
-        window.addEventListener('scroll', function () {
-            const stickyCTA = document.getElementById('sticky-cta');
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollTop > lastScrollTop && scrollTop > 500) {
-                // Scrolling down
-                stickyCTA.style.transform = 'translateY(0)';
-            } else if (scrollTop < lastScrollTop) {
-                // Scrolling up
-                stickyCTA.style.transform = 'translateY(100%)';
-            }
-
-            lastScrollTop = scrollTop;
-        });
-
-        // Exit intent detection
-        document.addEventListener('mouseleave', function (e) {
-            if (e.clientY <= 0) {
-                // Mouse left through top of page
-                if (!document.getElementById('consultation-modal').classList.contains('hidden')) {
-                    return; // Modal already open
-                }
-
-                // Show exit intent offer
-                setTimeout(() => {
-                    if (confirm('Wait! Get our FREE Parts Compatibility Guide before you go. This guide helps you identify the exact parts you need. Click OK to download now.')) {
-                        openConsultationModal();
-                    }
-                }, 500);
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-    <script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
