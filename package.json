@@ -1,0 +1,20 @@
+{
+  "name": "flowpro-landing",
+  "version": "1.0.0",
+  "description": "Modern SaaS landing page built with HTML, CSS, and JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build required'",
+    "deploy": "vercel --prod"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "keywords": ["landing-page", "saas", "html", "css", "javascript"],
+  "author": "FlowPro",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  }
+}
