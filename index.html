@@ -1864,21 +1864,21 @@
         });
 
         // Exit intent detection
-        document.addEventListener('mouseleave', function (e) {
-            if (e.clientY <= 0) {
-                // Mouse left through top of page
-                if (!document.getElementById('consultation-modal').classList.contains('hidden')) {
-                    return; // Modal already open
-                }
+        // document.addEventListener('mouseleave', function (e) {
+        //     if (e.clientY <= 0) {
+        //         // Mouse left through top of page
+        //         if (!document.getElementById('consultation-modal').classList.contains('hidden')) {
+        //             return; // Modal already open
+        //         }
 
-                // Show exit intent offer
-                setTimeout(() => {
-                    if (confirm('Wait! Get our FREE Parts Compatibility Guide before you go. This guide helps you identify the exact parts you need. Click OK to download now.')) {
-                        openConsultationModal();
-                    }
-                }, 500);
-            }
-        });
+        //         // Show exit intent offer
+        //         setTimeout(() => {
+        //             if (confirm('Wait! Get our FREE Parts Compatibility Guide before you go. This guide helps you identify the exact parts you need. Click OK to download now.')) {
+        //                 openConsultationModal();
+        //             }
+        //         }, 500);
+        //     }
+        // });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
