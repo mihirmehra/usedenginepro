@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Used Engine Pro - Rent a Car Service</title>
     <!-- Load Tailwind CSS -->
+     <link rel="shortcut icon" href="../favicon.PNG" type="image/x-icon">
     <link rel="icon" href="favicon.png" sizes="32x32" />
     <link rel="icon" href="favicon.png" sizes="192x192" />
     <link rel="apple-touch-icon" href="favicon.png" />
@@ -92,46 +93,68 @@
 </head>
 <body class="bg-gray-50 font-sans">
 
-    <!-- Navigation Bar -->
-    <header class="bg-white shadow sticky top-0 z-50">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
                 <div class="flex items-center">
-                    <svg class="h-10 w-10 text-secondary" viewBox="0 0 40 40" fill="currentColor">
+                    <svg class="h-10 w-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
                         <path
                             d="M20 4L4 12v16l16 8 16-8V12L20 4zm0 4.5L30.5 14 20 19.5 9.5 14 20 8.5zM8 16.5l10 5v11l-10-5v-11zm12 16v-11l10-5v11l-10 5z" />
                     </svg>
-                    <span class="ml-3 text-xl font-bold text-secondary">UsedEnginePro</span>
+                    <span class="ml-3 text-xl font-bold text-primary">UsedEnginePro</span>
                 </div>
 
-            <!-- Menu (Right) -->
-            <div class="hidden md:flex space-x-6 lg:space-x-8 text-gray-700 text-sm font-medium">
-                <a href="#" class="hover:text-primary transition duration-150">Used Engines</a>
-                <a href="#" class="hover:text-primary transition duration-150">Used Transmissions</a>
-                <a href="#" class="hover:text-primary transition duration-150">Used Auto-Parts</a>
-                <a href="#" class="text-primary border-b-2 border-primary pb-1">Rent A Car</a>
-                <a href="#" class="hover:text-primary transition duration-150">About Us</a>
-                <a href="#" class="hover:text-primary transition duration-150">Contact</a>
-            </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#parts-catalog" class="text-text-secondary hover:text-primary transition-colors">Parts Catalog</a>
+                    <a href="/rent-a-car" class="text-text-secondary hover:text-primary transition-colors">Rent A Car</a>
+                    <a href="#how-it-works" class="text-text-secondary hover:text-primary transition-colors">How Works</a>
+                    <a href="#testimonials" class="text-text-secondary hover:text-primary transition-colors">Reviews</a>
+                    <a href="tel:(315) 394-3094" onclick="return gtag_report_conversion('tel:315-394-3094');"
+                        class="bg-accent-50 text-accent hover:bg-accent hover:text-white transition-all px-4 py-2 rounded-lg border-2 border-accent flex items-center font-bold text-lg shadow-md hover:shadow-lg transform hover:scale-105">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                        </svg>
+                        (315) 394-3094
+                    </a>
+                    <button onclick="openConsultationModal()" class="btn-primary">Get Free Consultation</button>
+                </div>
 
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-gray-700 hover:text-primary focus:outline-none" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                <!-- Hamburger Icon (SVG) -->
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
-
-        <!-- Mobile Menu (Hidden by default) -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Used Engines</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Used Transmissions</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Used Auto-Parts</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-primary bg-primary/10">Rent A Car</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">About Us</a>
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Contact</a>
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
         </div>
-    </header>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100">
+            <div class="px-4 py-3 space-y-3">
+                <a href="#parts-catalog" class="block text-text-secondary hover:text-primary transition-colors">Parts
+                    Catalog</a>
+                <a href="/rent-a-car" class="block text-text-secondary hover:text-primary transition-colors">Rent A Car</a>
+                <a href="#how-it-works" class="block text-text-secondary hover:text-primary transition-colors">How It
+                    Works</a>
+                <a href="#testimonials"
+                    class="block text-text-secondary hover:text-primary transition-colors">Reviews</a>
+                <a href="tel:(315) 394-3094" onclick="return gtag_report_conversion('tel:315-394-3094');"
+                    class="block bg-accent-50 text-accent hover:bg-accent hover:text-white transition-all px-4 py-3 rounded-lg border-2 border-accent font-bold text-lg text-center shadow-md">
+                    <svg class="w-5 h-5 mr-2 inline" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    Call (315) 394-3094
+                </a>
+                <button onclick="openConsultationModal()" class="w-full btn-primary mt-3">Get Free Consultation</button>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section with Lead Generation Form -->
     <main class="hero-bg min-h-[700px] flex items-center justify-center p-4" style="background-image: linear-gradient(rgba(30,58,138,0.7), rgba(234,88,12,0.4)), url('img/luxury-car-rental-fleet.png'); background-size: cover; background-position: center;">
