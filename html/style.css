@@ -1,0 +1,28 @@
+
+.hero-bg {
+    background-image: url('https://placehold.co/1920x1080/1a202c/ffffff?text=Premium+Car+Rental');
+    background-size: cover;
+    background-position: center;
+}
+.form-card {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.95);
+}
+.logo-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #db3535;
+}
+input:focus, select:focus {
+    --tw-ring-color: #db3535 !important;
+}
+
+/* New section tweaks */
+.faq-q span:last-child { font-weight: 700; }
+.faq-a { transition: max-height 0.25s ease; }
+
+/* Ensure primary color utility fallback for plain CSS elements */
+.text-primary { color: #db3535 !important; }
+.bg-primary { background-color: #db3535 !important; }
+.border-primary { border-color: #db3535 !important; }

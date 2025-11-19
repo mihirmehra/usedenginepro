@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Used Engine Pro - Rent a Car Service</title>
+    <!-- Load Tailwind CSS -->
+    <link rel="icon" href="favicon.png" sizes="32x32" />
+    <link rel="icon" href="favicon.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Swiper JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <style>
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(219, 53, 53, 0.7); }
+            50% { box-shadow: 0 0 0 10px rgba(219, 53, 53, 0); }
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(219, 53, 53, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(219, 53, 53, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(219, 53, 53, 0); }
+        }
+        .animate-in-up { animation: slideInUp 0.6s ease-out; }
+        .animate-in-left { animation: slideInLeft 0.6s ease-out; }
+        .animate-in-right { animation: slideInRight 0.6s ease-out; }
+        .animate-fade-in { animation: fadeIn 0.8s ease-out; }
+        .pulse-glow { animation: pulse-glow 2s infinite; }
+        .pulse-ring { animation: pulse-ring 2s infinite; }
+        .hero-text { animation: slideInLeft 0.8s ease-out; }
+        .form-card-anim { animation: slideInRight 0.8s ease-out; }
+        .section-title { animation: slideInUp 0.6s ease-out; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#db3535',
+                        'secondary': '#000000',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <script>
+        // Simple FAQ toggle: expand/collapse answers
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqButtons = document.querySelectorAll('.faq-q');
+            faqButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const parent = btn.parentElement;
+                    const answer = parent.querySelector('.faq-a');
+                    if (!answer) return;
+                    const isHidden = answer.classList.contains('hidden');
+                    // collapse all
+                    document.querySelectorAll('.faq-a').forEach(a => a.classList.add('hidden'));
+                    document.querySelectorAll('.faq-q span:last-child').forEach(s => s.textContent = '+');
+                    if (isHidden) {
+                        answer.classList.remove('hidden');
+                        btn.querySelector('span:last-child').textContent = '-';
+                    } else {
+                        answer.classList.add('hidden');
+                        btn.querySelector('span:last-child').textContent = '+';
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <!-- Navigation Bar -->
+    <header class="bg-white shadow sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            <!-- Logo (Left) -->
+            <a href="/" class="text-2xl font-bold logo-text">
+                <img style="width: 230px;" src="https://usedenginepro.com/static/media/logoM-1.49046f8e96b46316bfa1.png" alt="Motor Tiger">
+            </a>
+
+            <!-- Menu (Right) -->
+            <div class="hidden md:flex space-x-6 lg:space-x-8 text-gray-700 text-sm font-medium">
+                <a href="#" class="hover:text-primary transition duration-150">Used Engines</a>
+                <a href="#" class="hover:text-primary transition duration-150">Used Transmissions</a>
+                <a href="#" class="hover:text-primary transition duration-150">Used Auto-Parts</a>
+                <a href="#" class="text-primary border-b-2 border-primary pb-1">Rent A Car</a>
+                <a href="#" class="hover:text-primary transition duration-150">About Us</a>
+                <a href="#" class="hover:text-primary transition duration-150">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-700 hover:text-primary focus:outline-none" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <!-- Hamburger Icon (SVG) -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Used Engines</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Used Transmissions</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Used Auto-Parts</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-primary bg-primary/10">Rent A Car</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">About Us</a>
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Lead Generation Form -->
+    <main class="hero-bg min-h-[700px] flex items-center justify-center p-4" style="background-image: linear-gradient(rgba(2,6,23,0.7), rgba(219,53,53,0.4)), url('img/luxury-car-rental-fleet.png'); background-size: cover; background-position: center;">
+        <div class="max-w-6xl w-full flex flex-col lg:flex-row items-center justify-between gap-12">
+            
+            <!-- Hero Text/CTA (Left Side) -->
+            <div class="hero-text">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 drop-shadow-lg text-white">
+                    Drive Your Adventure<br/>with <span class="text-primary drop-shadow-xl">Used Engine Pro</span>
+                </h1>
+                <p class="text-lg text-white font-light bg-black/40 backdrop-blur p-3 rounded inline-block w-fit">
+                    Affordable, reliable rentals for every journey.
+                </p>
+            </div>
+
+            <!-- Reservation Widget/Form (Right Side) -->
+            <div id="reservationWidget" class="lg:w-1/2 w-full form-card-anim">
+                <!-- Form Card -->
+                <div class="form-card p-6 sm:p-7 rounded-lg shadow-lg transition duration-500 hover:shadow-primary/30 border border-white/20">
+                    <h2 class="text-xl font-bold text-gray-900 mb-5 border-b pb-3 flex items-center justify-between">
+                        <span>Reserve Your Vehicle</span>
+                        <span class="text-primary text-2xl animate-bounce">🚗</span>
+                    </h2>
+
+                    <form id="rentalForm" onsubmit="handleFormSubmit(event)" novalidate autocomplete="off">
+                        
+                        <!-- Location Fields -->
+                        <div class="grid grid-cols-1 gap-4 mb-5">
+                            <div>
+                                <label for="pickupLocation" class="block text-xs font-semibold text-gray-800 mb-1">Pick-up Location<span class="text-primary font-bold">*</span></label>
+                                <div class="relative">
+                                    <input type="text" id="pickupLocation" name="pickupLocation" required placeholder="Enter city, airport code..."
+                                        class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition duration-150 text-sm font-medium">
+                                    <button type="button" id="pickupUseCurrent" class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary/10 px-2 py-1 rounded text-xs font-semibold text-primary hover:bg-primary/20">Use current</button>
+                                    <div id="pickupSuggestions" class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded shadow-lg z-40 hidden max-h-40 overflow-auto"></div>
+                                </div>
+                            </div>
+                            <!-- "Return to a different location" checkbox logic simulated for simplicity -->
+                            <div class="flex items-center">
+                                <input type="checkbox" id="differentReturn" name="differentReturn" class="rounded text-primary focus:ring-primary h-4 w-4 border-gray-300 cursor-pointer" onchange="toggleReturnLocation()">
+                                <label for="differentReturn" class="ml-2 block text-xs font-semibold text-gray-700 cursor-pointer">Return to a different location</label>
+                            </div>
+                            <div id="dropoffLocationField" class="hidden">
+                                <label for="dropoffLocation" class="block text-xs font-semibold text-gray-800 mb-1">Return Location<span class="text-primary font-bold">*</span></label>
+                                <div class="relative">
+                                    <input type="text" id="dropoffLocation" name="dropoffLocation" placeholder="Enter city, airport code..."
+                                        class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition duration-150 text-sm font-medium">
+                                    <button type="button" id="dropoffUseCurrent" class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary/10 px-2 py-1 rounded text-xs font-semibold text-primary hover:bg-primary/20">Use current</button>
+                                    <div id="dropoffSuggestions" class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded shadow-lg z-40 hidden max-h-40 overflow-auto"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date/Time Fields -->
+                        <div class="grid grid-cols-2 gap-3 mb-5">
+                            <!-- Pick-up Date/Time -->
+                            <div>
+                                <label for="pickupDate" class="block text-xs font-semibold text-gray-800 mb-1">Pick-up Date<span class="text-primary font-bold">*</span></label>
+                                <input type="date" id="pickupDate" name="pickupDate" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition duration-150 text-sm font-medium">
+                            </div>
+                            <div>
+                                <label for="pickupTime" class="block text-xs font-semibold text-gray-800 mb-1">Pick-up Time<span class="text-primary font-bold">*</span></label>
+                                <input type="time" id="pickupTime" name="pickupTime" required value="12:00"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition duration-150 text-sm font-medium">
+                            </div>
+                            
+                            <!-- Return Date/Time -->
+                            <div>
+                                <label for="returnDate" class="block text-xs font-semibold text-gray-800 mb-1">Return Date<span class="text-primary font-bold">*</span></label>
+                                <input type="date" id="returnDate" name="returnDate" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition duration-150 text-sm font-medium">
+                            </div>
+                            <div>
+                                <label for="returnTime" class="block text-xs font-semibold text-gray-800 mb-1">Return Time<span class="text-primary font-bold">*</span></label>
+                                <input type="time" id="returnTime" name="returnTime" required value="12:00"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition duration-150 text-sm font-medium">
+                            </div>
+                        </div>
+
+                        <!-- Age and Corporate ID -->
+                        <div class="grid grid-cols-2 gap-3 mb-5">
+                            <div>
+                                <label for="renterAge" class="block text-xs font-semibold text-gray-800 mb-1">Renter Age</label>
+                                <select id="renterAge" name="renterAge"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition duration-150 text-sm font-medium bg-white">
+                                    <option value="25+">25+</option>
+                                    <option value="24">24</option>
+                                    <option value="23">23</option>
+                                    <option value="22">22</option>
+                                    <option value="21">21</option>
+                                    <option value="20">20</option>
+                                    <option value="19">19</option>
+                                    <option value="18">18</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="corporateID" class="block text-xs font-semibold text-gray-800 mb-1">Corporate Account</label>
+                                <input type="text" id="corporateID" name="corporateID" placeholder="Optional"
+                                    class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition duration-150 text-sm font-medium">
+                            </div>
+                        </div>
+
+                        <!-- Phone Field -->
+                        <div class="mb-5">
+                            <label for="phoneNumber" class="block text-xs font-semibold text-gray-800 mb-1">Phone Number<span class="text-primary font-bold">*</span></label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+1 (555) 000-0000" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary transition duration-150 text-sm font-medium">
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <button type="submit" id="continueButton"
+                            class="w-full py-2.5 text-sm font-bold rounded bg-primary text-white hover:bg-primary/90 active:scale-95 transition duration-200 ease-in-out shadow-lg shadow-primary/50 uppercase tracking-wider">
+                            Request Booking
+                        </button>
+                    </form>
+
+                    <!-- Submission Message Area (initially hidden) -->
+                    <div id="successMessage" class="hidden mt-3 p-3 rounded text-center text-sm font-semibold bg-green-100 text-green-700 border border-green-500">
+                        ✓ Reservation received! We'll contact you shortly.
+                    </div>
+                    <div id="errorMessage" class="hidden mt-3 p-3 rounded text-center text-sm font-semibold bg-red-100 text-red-700 border border-red-500">
+                        Please fill in all required fields and try again.
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Additional Content Sections: Featured Cars, How It Works, Stats, Benefits, Services, FAQ -->
+
+    <!-- Car Types (Swiper Carousel) -->
+    <section class="car-types explore-vehicles py-12 bg-gradient-to-b from-white to-gray-50 section-title">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3 section-title">Explore Car Types</h2>
+                <p class="text-sm text-gray-600">Choose from our premium selection of vehicles</p>
+            </div>
+            <!-- Swiper Carousel -->
+            <div class="swiper car-types-swiper">
+                <div class="swiper-wrapper">
+                    <!-- Card: SEDAN -->
+                    <div class="swiper-slide">
+                        <div class="group single-item bg-white rounded shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:scale-105 h-full">
+                            <div class="img-area relative h-40 overflow-hidden bg-gray-200">
+                                <img src="img/silver-sedan.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="SEDAN">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
+                            </div>
+                            <div class="py-3 px-3 border-t flex justify-between items-center">
+                                <div>
+                                    <h5 class="text-gray-900 font-bold text-sm">SEDAN</h5>
+                                    <span class="text-gray-500 text-xs">(45 available)</span>
+                                </div>
+                                <button type="button" class="select-car-btn px-3 py-1 bg-primary text-white rounded text-xs font-semibold hover:bg-primary/90 active:scale-95 transition" data-car-type="SEDAN">Select</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card: SUV -->
+                    <div class="swiper-slide">
+                        <div class="group single-item bg-white rounded shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:scale-105 h-full">
+                            <div class="img-area relative h-40 overflow-hidden bg-gray-200">
+                                <img src="img/suv-vehicle.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="SUV">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
+                            </div>
+                            <div class="py-3 px-3 border-t flex justify-between items-center">
+                                <div>
+                                    <h5 class="text-gray-900 font-bold text-sm">SUV</h5>
+                                    <span class="text-gray-500 text-xs">(32 available)</span>
+                                </div>
+                                <button type="button" class="select-car-btn px-3 py-1 bg-primary text-white rounded text-xs font-semibold hover:bg-primary/90 active:scale-95 transition" data-car-type="SUV">Select</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card: HYBRID -->
+                    <div class="swiper-slide">
+                        <div class="group single-item bg-white rounded shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:scale-105 h-full">
+                            <div class="img-area relative h-40 overflow-hidden bg-gray-200">
+                                <img src="img/hybrid-car.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="HYBRID">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
+                            </div>
+                            <div class="py-3 px-3 border-t flex justify-between items-center">
+                                <div>
+                                    <h5 class="text-gray-900 font-bold text-sm">HYBRID</h5>
+                                    <span class="text-gray-500 text-xs">(54 available)</span>
+                                </div>
+                                <button type="button" class="select-car-btn px-3 py-1 bg-primary text-white rounded text-xs font-semibold hover:bg-primary/90 active:scale-95 transition" data-car-type="HYBRID">Select</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card: TRUCK -->
+                    <div class="swiper-slide">
+                        <div class="group single-item bg-white rounded shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:scale-105 h-full">
+                            <div class="img-area relative h-40 overflow-hidden bg-gray-200">
+                                <img src="img/classic-red-pickup.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="TRUCK">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
+                            </div>
+                            <div class="py-3 px-3 border-t flex justify-between items-center">
+                                <div>
+                                    <h5 class="text-gray-900 font-bold text-sm">TRUCK</h5>
+                                    <span class="text-gray-500 text-xs">(40 available)</span>
+                                </div>
+                                <button type="button" class="select-car-btn px-3 py-1 bg-primary text-white rounded text-xs font-semibold hover:bg-primary/90 active:scale-95 transition" data-car-type="TRUCK">Select</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card: EV -->
+                    <div class="swiper-slide">
+                        <div class="group single-item bg-white rounded shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden cursor-pointer transform hover:scale-105 h-full">
+                            <div class="img-area relative h-40 overflow-hidden bg-gray-200">
+                                <img src="img/futuristic-electric-vehicle.png" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="EV">
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300"></div>
+                            </div>
+                            <div class="py-3 px-3 border-t flex justify-between items-center">
+                                <div>
+                                    <h5 class="text-gray-900 font-bold text-sm">EV</h5>
+                                    <span class="text-gray-500 text-xs">(28 available)</span>
+                                </div>
+                                <button type="button" class="select-car-btn px-3 py-1 bg-primary text-white rounded text-xs font-semibold hover:bg-primary/90 active:scale-95 transition" data-car-type="EV">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation buttons -->
+                <div class="swiper-button-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-primary/80 hover:bg-primary text-white rounded-full flex items-center justify-center -ml-5 transition"></div>
+                <div class="swiper-button-next absolute right-0 top-1/2 -translate-y-1/2 z-10 w-9 h-9 bg-primary/80 hover:bg-primary text-white rounded-full flex items-center justify-center -mr-5 transition"></div>
+                <!-- Pagination -->
+                <div class="swiper-pagination mt-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal: Reservation for selected car type -->
+    <div id="carModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 overflow-y-auto p-4 animate-fade-in">
+        <div class="bg-white rounded-lg w-full max-w-md mx-auto p-5 relative transform transition-all duration-300 hover:shadow-lg">
+            <button id="modalClose" class="absolute right-3 top-3 text-gray-500 hover:text-gray-700 text-xl font-bold">✕</button>
+            <h3 id="modalTitle" class="text-lg font-bold mb-4 text-gray-900 section-title">Reserve Vehicle</h3>
+            <form id="modalRentalForm" class="space-y-3">
+                <input type="hidden" name="carType" id="modalCarType">
+                <input type="hidden" name="hp_field" id="modalHp" value="">
+                <input type="hidden" name="ts" id="modalTs" value="">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-800 mb-1">Pick-up Location<span class="text-primary font-bold">*</span></label>
+                        <div class="relative">
+                            <input type="text" name="pickupLocation" id="modalPickup" required placeholder="Enter city..." class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary text-xs font-medium">
+                            <button type="button" id="modalPickupUseCurrent" class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary/10 px-2 py-1 rounded text-xs font-semibold text-primary hover:bg-primary/20">Use</button>
+                            <div id="modalPickupSuggestions" class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded shadow-lg z-40 hidden max-h-32 overflow-auto"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-800 mb-1">Return Location<span class="text-primary font-bold">*</span></label>
+                        <div class="relative">
+                            <input type="text" name="dropoffLocation" id="modalDropoff" required placeholder="Enter city..." class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary text-xs font-medium">
+                            <button type="button" id="modalDropoffUseCurrent" class="absolute right-2 top-1/2 -translate-y-1/2 bg-primary/10 px-2 py-1 rounded text-xs font-semibold text-primary hover:bg-primary/20">Use</button>
+                            <div id="modalDropoffSuggestions" class="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded shadow-lg z-40 hidden max-h-32 overflow-auto"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-800 mb-1">Pick-up Date<span class="text-primary font-bold">*</span></label>
+                        <input type="date" name="pickupDate" id="modalPickupDate" required class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary text-xs font-medium">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-800 mb-1">Return Date<span class="text-primary font-bold">*</span></label>
+                        <input type="date" name="returnDate" id="modalReturnDate" required class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary text-xs font-medium">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-800 mb-1">Pick-up Time<span class="text-primary font-bold">*</span></label>
+                        <input type="time" name="pickupTime" id="modalPickupTime" required class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary text-xs font-medium" value="12:00">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-800 mb-1">Return Time<span class="text-primary font-bold">*</span></label>
+                        <input type="time" name="returnTime" id="modalReturnTime" required class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary text-xs font-medium" value="12:00">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-800 mb-1">Renter Age</label>
+                        <select name="renterAge" id="modalRenterAge" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary text-xs font-medium bg-white">
+                            <option value="25+">25+</option>
+                            <option value="24">24</option>
+                            <option value="23">23</option>
+                            <option value="22">22</option>
+                            <option value="21">21</option>
+                            <option value="20">20</option>
+                            <option value="19">19</option>
+                            <option value="18">18</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-800 mb-1">Corporate Account</label>
+                        <input type="text" name="corporateID" id="modalCorporate" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary text-xs font-medium" placeholder="Optional">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-semibold text-gray-800 mb-1">Phone Number<span class="text-primary font-bold">*</span></label>
+                        <input type="tel" name="phoneNumber" id="modalPhoneNumber" required placeholder="+1 (555) 000-0000" class="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-primary focus:border-primary text-xs font-medium">
+                    </div>
+                </div>
+                <div class="pt-3 text-right">
+                    <button type="submit" class="px-6 py-2 bg-primary text-white rounded text-sm font-bold hover:bg-primary/90 active:scale-95 transition transform">Request Booking</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <section class="bg-gradient-to-b from-gray-50 to-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3">How do I rent a car?</h2>
+                <p class="text-xl text-gray-600">Booking car hire in three simple steps</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="relative p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto bg-primary text-white rounded-full font-bold text-2xl mb-6">1</div>
+                    <h3 class="font-bold text-xl text-gray-900 mb-3 text-center">Search Vehicle</h3>
+                    <p class="text-gray-600 text-center">Browse our fleet, compare rates, and find the perfect car for your trip.</p>
+                </div>
+                <div class="relative p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto bg-primary text-white rounded-full font-bold text-2xl mb-6">2</div>
+                    <h3 class="font-bold text-xl text-gray-900 mb-3 text-center">Provide Details</h3>
+                    <p class="text-gray-600 text-center">Share your pickup/return details and any special requests.</p>
+                </div>
+                <div class="relative p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="flex items-center justify-center w-16 h-16 mx-auto bg-primary text-white rounded-full font-bold text-2xl mb-6">3</div>
+                    <h3 class="font-bold text-xl text-gray-900 mb-3 text-center">Confirm Booking</h3>
+                    <p class="text-gray-600 text-center">Confirm payment and get your booking confirmation instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats + Benefits -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Dream Rent a Car — Find Your Best Car Here</h2>
+                    <p class="text-gray-600 text-lg mb-6">Premium car hire at affordable rates worldwide. Our fleet includes a wide range of vehicles to suit every need and budget.</p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold text-2xl">✓</span>
+                            <span class="text-gray-700">Premium vehicles with regular maintenance and roadside assistance.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold text-2xl">✓</span>
+                            <span class="text-gray-700">Transparent pricing with no surprise fees.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-primary font-bold text-2xl">✓</span>
+                            <span class="text-gray-700">Flexible pickup and return options across major locations.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <img src="img/scenic-road-with-car-driving-through-mountains-at-.jpg" alt="Scenic Mountain Road" class="w-full rounded-lg shadow-xl">
+                    <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur p-6 rounded-lg shadow-lg">
+                        <div class="grid grid-cols-2 gap-6 text-center">
+                            <div>
+                                <div class="text-3xl md:text-4xl font-bold text-primary">274k</div>
+                                <div class="text-sm text-gray-600 font-semibold">Satisfied Clients</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl md:text-4xl font-bold text-primary">40%</div>
+                                <div class="text-sm text-gray-600 font-semibold">Client Referrals</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Services -->
+    <section class="bg-gradient-to-b from-gray-50 to-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Customer Services</h2>
+                <p class="text-xl text-gray-600">Benefit from day one and get on the road faster</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-primary text-4xl font-bold mb-3">💒</div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-3">Wedding Car Rental</h3>
+                    <p class="text-gray-600">Elegant vehicles and professional drivers for your special day.</p>
+                </div>
+                <div class="p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-primary text-4xl font-bold mb-3">💻</div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-3">Online Booking</h3>
+                    <p class="text-gray-600">Quick reservations with instant confirmations and secure payments.</p>
+                </div>
+                <div class="p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-primary text-4xl font-bold mb-3">💰</div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-3">Affordable Rates</h3>
+                    <p class="text-gray-600">Value plans and regular discounts for frequent customers.</p>
+                </div>
+                <div class="p-8 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow">
+                    <div class="text-primary text-4xl font-bold mb-3">🛣️</div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-3">One-Way Rentals</h3>
+                    <p class="text-gray-600">Flexible drop-off options across many locations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">Finding your ride with us: Guide & FAQs</p>
+            </div>
+            <div class="space-y-3" id="faqList">
+                <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-q w-full text-left p-5 bg-white hover:bg-gray-50 flex justify-between items-center font-semibold text-lg">
+                        <span>Where should I book a ride to right now?</span>
+                        <span class="text-primary text-2xl">+</span>
+                    </button>
+                    <div class="faq-a p-5 hidden bg-gray-50 text-gray-700 border-t">We recommend booking to destinations where you'll get the most flexibility and value — check popular nearby cities or airports for the best rates.</div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-q w-full text-left p-5 bg-white hover:bg-gray-50 flex justify-between items-center font-semibold text-lg">
+                        <span>What are the benefits of renting with Used Engine Pro?</span>
+                        <span class="text-primary text-2xl">+</span>
+                    </button>
+                    <div class="faq-a p-5 hidden bg-gray-50 text-gray-700 border-t">Used Engine Pro offers 24/7 customer support, transparent pricing, well-maintained vehicles, and flexible rental options to suit your needs.</div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-q w-full text-left p-5 bg-white hover:bg-gray-50 flex justify-between items-center font-semibold text-lg">
+                        <span>How do I cancel or modify my reservation?</span>
+                        <span class="text-primary text-2xl">+</span>
+                    </button>
+                    <div class="faq-a p-5 hidden bg-gray-50 text-gray-700 border-t">Cancellations and modifications can be made through your customer account up to 24 hours before pickup. Please contact support for assistance.</div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-q w-full text-left p-5 bg-white hover:bg-gray-50 flex justify-between items-center font-semibold text-lg">
+                        <span>What insurance options are available?</span>
+                        <span class="text-primary text-2xl">+</span>
+                    </button>
+                    <div class="faq-a p-5 hidden bg-gray-50 text-gray-700 border-t">We offer comprehensive insurance coverage including collision, theft, and liability protection. Additional coverage options are available at checkout.</div>
+                </div>
+                <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-q w-full text-left p-5 bg-white hover:bg-gray-50 flex justify-between items-center font-semibold text-lg">
+                        <span>Do you offer corporate or long-term rental discounts?</span>
+                        <span class="text-primary text-2xl">+</span>
+                    </button>
+                    <div class="faq-a p-5 hidden bg-gray-50 text-gray-700 border-t">Yes! We offer special rates for corporate accounts and long-term rentals. Enter your corporate account number during booking to receive discounts.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Used Engine Pro Section -->
+                <div>
+                    <h3 class="text-2xl font-bold text-primary mb-4">Used Engine Pro</h3>
+                    <p class="text-gray-400 text-sm mb-4">Used Engine Pro offers the largest selection of quality used engines and transmissions nationwide, delivering reliable performance at affordable prices. Every part is thoroughly inspected to ensure maximum efficiency, backed by our commitment to quality and customer satisfaction.</p>
+                    <!-- Social Media Links -->
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/people/Used Engine Pro/61554914125745/" target="_blank" class="text-gray-400 hover:text-blue-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="https://www.instagram.com/motortigerofficial/" target="_blank" class="text-gray-400 hover:text-pink-500 transition">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.217.6c-.89.344-1.33.856-1.887 1.414-.557.557-1.069.997-1.413 1.886-.266.688-.467 1.558-.527 2.836C.008 8.334 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.527 2.836.363.887.86 1.33 1.414 1.886.557.557.997 1.068 1.886 1.413.787.266 1.659.467 2.936.527C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.261 2.836-.527.887-.363 1.33-.86 1.886-1.414.557-.557 1.068-.997 1.413-1.887.266-.787.467-1.659.527-2.936.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.261-2.148-.527-2.836-.363-.887-.86-1.33-1.414-1.886-.557-.557-.997-1.068-1.887-1.413-.787-.266-1.659-.467-2.936-.527C15.667.008 15.26 0 12 0zm0 2.16c3.203 0 3.585.009 4.849.07 1.171.054 1.805.244 2.227.408.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.354 1.056.408 2.227.061 1.264.07 1.646.07 4.849s-.009 3.585-.07 4.849c-.054 1.171-.244 1.805-.408 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.056.354-2.227.408-1.264.061-1.646.07-4.849.07s-3.585-.009-4.849-.07c-1.171-.054-1.805-.244-2.227-.408-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.354-1.056-.408-2.227-.061-1.264-.07-1.646-.07-4.849s.009-3.585.07-4.849c.054-1.171.244-1.805.408-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.056-.354 2.227-.408 1.264-.061 1.646-.07 4.849-.07z"/><circle cx="12" cy="12" r="3.297"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Section -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="mailto:info@usedenginepro.com" class="hover:text-primary transition">✉ info@usedenginepro.com</a></li>
+                        <li><a href="tel:+18552531634" class="hover:text-primary transition">📞 (855) 253-1634</a></li>
+                        <li><a href="tel:+18774737675" class="hover:text-primary transition">📞 (877)-473-7675</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links Section -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="/about" class="hover:text-primary transition">About Us</a></li>
+                        <li><a href="/contact" class="hover:text-primary transition">Contact</a></li>
+                        <li><a href="categories/used-engines" class="hover:text-primary transition">Used Engines</a></li>
+                        <li><a href="categories/used-transmissions" class="hover:text-primary transition">Used Transmissions</a></li>
+                        <li><a href="categories/used-auto-spare-parts" class="hover:text-primary transition">Used Auto Spare Parts</a></li>
+                        <li><a href="categories/rebuilt-engines" class="hover:text-primary transition">Rebuilt Engines</a></li>
+                        <li><a href="categories/rebuilt-transmissions" class="hover:text-primary transition">Rebuilt Transmissions</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Customer Service Section -->
+                <div>
+                    <h4 class="font-semibold mb-4">Customer Service</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="policies/privacy-policy" class="hover:text-primary transition">Privacy Policy</a></li>
+                        <li><a href="policies/return-policy" class="hover:text-primary transition">Return, Cancellation & Shipping Policy</a></li>
+                        <li><a href="policies/warranty-policy" class="hover:text-primary transition">Warranty Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright Section -->
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>Copyright 2024 – 2025 © Used Engine Pro. All right reserved. Powered by Used Engine Pro.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating "Get a Call Now" Button -->
+    <div id="callNowBtn" class="fixed bottom-6 right-6 z-40">
+        <button class="w-14 h-14 rounded-full bg-primary text-white shadow-lg hover:bg-primary/90 transition-all duration-300 pulse-ring flex items-center justify-center text-2xl font-bold" onclick="openCallForm()">📞</button>
+    </div>
+
+    <!-- Quick Lead Generation Modal -->
+    <div id="callModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg w-full max-w-sm p-6 relative shadow-2xl animate-fade-in">
+            <button class="absolute right-3 top-3 text-gray-500 hover:text-gray-700 text-2xl font-bold" onclick="closeCallForm()">✕</button>
+            <h2 class="text-xl font-bold text-gray-900 mb-4">Get Instant Callback</h2>
+            <!-- <p class="text-gray-600 text-sm mb-4">Our team will call you within 30 minutes</p> -->
+            <form id="callForm" onsubmit="handleCallForm(event)">
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-800 mb-1">Name<span class="text-primary">*</span></label>
+                        <input type="text" id="callName" name="name" required placeholder="Your name" class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-800 mb-1">Email<span class="text-primary">*</span></label>
+                        <input type="email" id="callEmail" name="email" required placeholder="your@email.com" class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-800 mb-1">Phone<span class="text-primary">*</span></label>
+                        <input type="tel" id="callPhone" name="phone" required placeholder="+1 (555) 000-0000" class="w-full px-3 py-2 border border-gray-300 rounded text-sm focus:ring-2 focus:ring-primary focus:border-primary outline-none transition">
+                    </div>
+                    <button type="submit" class="w-full py-2 bg-primary text-white font-semibold rounded text-sm hover:bg-primary/90 active:scale-95 transition mt-4">Request Call</button>
+                </div>
+            </form>
+            <div id="callSuccess" class="hidden mt-4 p-3 rounded bg-green-100 text-green-700 text-sm font-semibold text-center">✓ We'll call you soon!</div>
+            <div id="callError" class="hidden mt-4 p-3 rounded bg-red-100 text-red-700 text-sm font-semibold text-center">Error submitting. Try again.</div>
+        </div>
+    </div>
+
+    <script>
+        function openCallForm() {
+            document.getElementById('callModal').classList.remove('hidden');
+            document.getElementById('callModal').classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCallForm() {
+            document.getElementById('callModal').classList.add('hidden');
+            document.getElementById('callModal').classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+
+        async function handleCallForm(e) {
+            e.preventDefault();
+            const form = document.getElementById('callForm');
+            const name = document.getElementById('callName').value.trim();
+            const email = document.getElementById('callEmail').value.trim();
+            const phone = document.getElementById('callPhone').value.trim();
+            const successMsg = document.getElementById('callSuccess');
+            const errorMsg = document.getElementById('callError');
+
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+
+            if (!name || !email || !phone) {
+                errorMsg.textContent = 'All fields are required.';
+                errorMsg.classList.remove('hidden');
+                return;
+            }
+
+            const phoneDigits = phone.replace(/\D/g, '');
+            if (phoneDigits.length < 10) {
+                errorMsg.textContent = 'Phone must have at least 10 digits.';
+                errorMsg.classList.remove('hidden');
+                return;
+            }
+
+            try {
+                const res = await fetch('send_mail.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        phone: phone,
+                        leadType: 'call_request',
+                        ts: Math.floor(Date.now() / 1000)
+                    })
+                });
+                const json = await res.json();
+                if (json && json.success) {
+                    document.getElementById('callForm').reset();
+                    successMsg.classList.remove('hidden');
+                    setTimeout(() => closeCallForm(), 2000);
+                } else {
+                    throw new Error(json.message || 'Server error');
+                }
+            } catch (err) {
+                console.error('Call form error', err);
+                errorMsg.textContent = 'Could not submit. Try again later.';
+                errorMsg.classList.remove('hidden');
+            }
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('callModal')?.addEventListener('click', (e) => {
+            if (e.target.id === 'callModal') closeCallForm();
+        });
+    </script>
+
+    </footer>
+
+    <script>
+        // --- Location auto-suggestion and geolocation helpers ---
+        const nominatimSearchUrl = (q) => `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q)}&addressdetails=1&limit=6`;
+        const nominatimReverseUrl = (lat, lon) => `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
+
+        function debounce(fn, wait = 300) {
+            let t;
+            return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+        }
+
+        function attachAutoSuggest(inputId, suggestionsId, useCurrentBtnId) {
+            const input = document.getElementById(inputId);
+            const list = document.getElementById(suggestionsId);
+            const btn = useCurrentBtnId ? document.getElementById(useCurrentBtnId) : null;
+
+            const doSearch = debounce(async () => {
+                const q = input.value.trim();
+                if (!q) { list.classList.add('hidden'); list.innerHTML = ''; return; }
+                try {
+                    const res = await fetch(nominatimSearchUrl(q), { headers: { 'Accept-Language': 'en' }});
+                    if (!res.ok) throw new Error('Search failed');
+                    const json = await res.json();
+                    list.innerHTML = '';
+                    if (!json.length) { list.classList.add('hidden'); return; }
+                    json.forEach(place => {
+                        const item = document.createElement('div');
+                        item.className = 'px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm';
+                        item.textContent = place.display_name;
+                        item.addEventListener('click', () => {
+                            input.value = place.display_name;
+                            list.classList.add('hidden');
+                        });
+                        list.appendChild(item);
+                    });
+                    list.classList.remove('hidden');
+                } catch (e) {
+                    console.error('Location search error', e);
+                    list.classList.add('hidden');
+                }
+            }, 350);
+
+            input.addEventListener('input', doSearch);
+            input.addEventListener('focus', doSearch);
+            document.addEventListener('click', (ev) => { if (!input.contains(ev.target) && !list.contains(ev.target)) list.classList.add('hidden'); });
+
+            if (btn) {
+                btn.addEventListener('click', async () => {
+                    if (!navigator.geolocation) { alert('Geolocation is not supported by your browser.'); return; }
+                    btn.disabled = true; btn.textContent = 'Locating...';
+                    navigator.geolocation.getCurrentPosition(async (pos) => {
+                        try {
+                            const res = await fetch(nominatimReverseUrl(pos.coords.latitude, pos.coords.longitude));
+                            const json = await res.json();
+                            input.value = json.display_name || `${pos.coords.latitude}, ${pos.coords.longitude}`;
+                        } catch (e) { console.error('Reverse geocode failed', e); input.value = `${pos.coords.latitude}, ${pos.coords.longitude}`; }
+                        btn.disabled = false; btn.textContent = 'Use current';
+                    }, (err) => { alert('Could not get your location: ' + err.message); btn.disabled = false; btn.textContent = 'Use current'; });
+                });
+            }
+        }
+
+        // Helper to initialize Google Places Autocomplete for an input
+        function initGoogleAutocompleteFor(inputId) {
+            const input = document.getElementById(inputId);
+            if (!input || !window.google || !google.maps || !google.maps.places) return;
+            const opts = { types: ['geocode'] };
+            const ac = new google.maps.places.Autocomplete(input, opts);
+            ac.setFields(['formatted_address', 'geometry', 'name']);
+            ac.addListener('place_changed', () => {
+                const place = ac.getPlace();
+                if (place && place.formatted_address) input.value = place.formatted_address;
+            });
+        }
+
+        // Attach autosuggest on DOM ready. If a Google Places API key is provided via a meta tag
+        // (<meta name="google-places-api-key" content="YOUR_KEY">), this will dynamically
+        // load the Google Maps JS API and use Places Autocomplete. Otherwise it falls back to Nominatim.
+        document.addEventListener('DOMContentLoaded', () => {
+            const googleKey = document.querySelector('meta[name="google-places-api-key"]')?.content || '';
+
+            const initFallback = () => {
+                attachAutoSuggest('pickupLocation', 'pickupSuggestions', 'pickupUseCurrent');
+                attachAutoSuggest('dropoffLocation', 'dropoffSuggestions', 'dropoffUseCurrent');
+            };
+
+            if (googleKey) {
+                // Dynamically load Google Maps JS API with Places library
+                window.initGooglePlaces = function () {
+                    try {
+                        initGoogleAutocompleteFor('pickupLocation');
+                        initGoogleAutocompleteFor('dropoffLocation');
+                    } catch (e) {
+                        console.error('Google Places init failed, falling back to Nominatim', e);
+                        initFallback();
+                    }
+                };
+                const s = document.createElement('script');
+                s.src = `https://maps.googleapis.com/maps/api/js?key=${googleKey}&libraries=places&callback=initGooglePlaces`;
+                s.defer = true;
+                s.async = true;
+                s.onerror = () => { console.error('Failed to load Google Maps API, falling back to Nominatim'); initFallback(); };
+                document.head.appendChild(s);
+            } else {
+                initFallback();
+            }
+
+            // Min date for date inputs
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('pickupDate').setAttribute('min', today);
+            document.getElementById('returnDate').setAttribute('min', today);
+        });
+
+        // --- Form submission (AJAX to send_mail.php) ---
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('rentalForm');
+            const successMsg = document.getElementById('successMessage');
+            const errorMsg = document.getElementById('errorMessage');
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+
+            // Basic browser validation first
+            if (!form.checkValidity()) {
+                errorMsg.textContent = 'Please check required fields and ensure dates/times are valid.';
+                errorMsg.classList.remove('hidden');
+                form.reportValidity();
+                return;
+            }
+
+            // Gather form data
+            const fd = new FormData(form);
+            const data = {};
+            for (const [k, v] of fd.entries()) data[k] = v;
+            // If differentReturn not checked, copy pickup -> dropoff
+            if (!document.getElementById('differentReturn').checked) data['dropoffLocation'] = data['pickupLocation'];
+
+            // Basic date/time consistency check
+            const pickupDate = data.pickupDate;
+            const returnDate = data.returnDate;
+            if (pickupDate && returnDate && pickupDate > returnDate) {
+                errorMsg.textContent = 'Return date must be the same or after pickup date.';
+                errorMsg.classList.remove('hidden');
+                return;
+            }
+
+            // POST to server
+            try {
+                const res = await fetch('send_mail.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+                const json = await res.json();
+                if (json && json.success) {
+                    // Redirect to thank you page
+                    window.location.href = 'thankyou.html';
+                } else {
+                    throw new Error(json.message || 'Server failed to process reservation');
+                }
+            } catch (e) {
+                console.error('Submission failed', e);
+                errorMsg.textContent = 'Could not submit reservation. Please try again later.';
+                errorMsg.classList.remove('hidden');
+            }
+        }
+
+        // Keep the original toggle function (updated to toggle required attribute correctly)
+        function toggleReturnLocation() {
+            const checkbox = document.getElementById('differentReturn');
+            const field = document.getElementById('dropoffLocationField');
+            const dropoffInput = document.getElementById('dropoffLocation');
+            
+            if (checkbox.checked) {
+                field.classList.remove('hidden');
+                dropoffInput.setAttribute('required', 'true');
+            } else {
+                field.classList.add('hidden');
+                dropoffInput.removeAttribute('required');
+                dropoffInput.value = ''; // Clear value when hidden
+            }
+        }
+
+        // --- Car type modal logic with location autocomplete ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Swiper carousel for car types
+            const swiper = new Swiper('.car-types-swiper', {
+                slidesPerView: 1.2,
+                spaceBetween: 24,
+                loop: false,
+                breakpoints: {
+                    640: { slidesPerView: 2.2 },
+                    1024: { slidesPerView: 3.2 },
+                    1280: { slidesPerView: 4.2 }
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                }
+            });
+
+            const modal = document.getElementById('carModal');
+            const modalClose = document.getElementById('modalClose');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalCarType = document.getElementById('modalCarType');
+            const modalForm = document.getElementById('modalRentalForm');
+
+            function openModalFor(carType) {
+                modalCarType.value = carType;
+                modalTitle.textContent = 'Reserve ' + carType;
+                const mainPickup = document.getElementById('pickupLocation')?.value || '';
+                const mainDropoff = document.getElementById('dropoffLocation')?.value || '';
+                if (mainPickup) document.getElementById('modalPickup').value = mainPickup;
+                if (mainDropoff) document.getElementById('modalDropoff').value = mainDropoff;
+                document.getElementById('modalTs').value = Math.floor(Date.now() / 1000);
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
+
+            document.querySelectorAll('.select-car-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const car = btn.getAttribute('data-car-type') || btn.dataset.carType;
+                    openModalFor(car);
+                });
+            });
+
+            modalClose?.addEventListener('click', closeModal);
+            modal?.addEventListener('click', (ev) => {
+                if (ev.target === modal) closeModal();
+            });
+
+            function validatePhone(phone) {
+                return /^[\d\s\+\-\(\)]+$/.test(phone) && phone.replace(/\D/g, '').length >= 10;
+            }
+
+            modalForm?.addEventListener('submit', async (ev) => {
+                ev.preventDefault();
+                const f = modalForm;
+                if (!f.checkValidity()) { f.reportValidity(); return; }
+                
+                const phone = document.getElementById('modalPhoneNumber').value;
+                if (!validatePhone(phone)) {
+                    alert('Please enter a valid phone number (at least 10 digits).');
+                    return;
+                }
+
+                const fd = new FormData(f);
+                const data = {};
+                for (const [k, v] of fd.entries()) data[k] = v;
+                if (!data.dropoffLocation || data.dropoffLocation.trim() === '') data.dropoffLocation = data.pickupLocation;
+
+                try {
+                    const res = await fetch('send_mail.php', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data),
+                    });
+                    const json = await res.json();
+                    if (json && json.success) {
+                        window.location.href = 'thankyou.html';
+                    } else {
+                        throw new Error(json.message || 'Server error');
+                    }
+                } catch (err) {
+                    console.error('Modal submission failed', err);
+                    alert('Could not submit reservation. Please try again later.');
+                }
+            });
+
+            // Location autocomplete
+            const nominatimSearchUrl = (q) => `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(q)}&addressdetails=1&limit=6`;
+            const nominatimReverseUrl = (lat, lon) => `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
+
+            function debounce(fn, wait = 300) {
+                let t;
+                return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); };
+            }
+
+            function attachAutoSuggest(inputId, suggestionsId, useCurrentBtnId) {
+                const input = document.getElementById(inputId);
+                const list = document.getElementById(suggestionsId);
+                const btn = useCurrentBtnId ? document.getElementById(useCurrentBtnId) : null;
+
+                const doSearch = debounce(async () => {
+                    const q = input.value.trim();
+                    if (!q) { list.classList.add('hidden'); list.innerHTML = ''; return; }
+                    try {
+                        const res = await fetch(nominatimSearchUrl(q), { headers: { 'Accept-Language': 'en' }});
+                        if (!res.ok) throw new Error('Search failed');
+                        const json = await res.json();
+                        list.innerHTML = '';
+                        if (!json.length) { list.classList.add('hidden'); return; }
+                        json.forEach(place => {
+                            const item = document.createElement('div');
+                            item.className = 'px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm font-medium transition';
+                            item.textContent = place.display_name;
+                            item.addEventListener('click', () => {
+                                input.value = place.display_name;
+                                list.classList.add('hidden');
+                            });
+                            list.appendChild(item);
+                        });
+                        list.classList.remove('hidden');
+                    } catch (e) {
+                        console.error('Location search error', e);
+                        list.classList.add('hidden');
+                    }
+                }, 350);
+
+                input.addEventListener('input', doSearch);
+                input.addEventListener('focus', doSearch);
+                document.addEventListener('click', (ev) => { 
+                    if (!input.contains(ev.target) && !list.contains(ev.target)) 
+                        list.classList.add('hidden'); 
+                });
+
+                if (btn) {
+                    btn.addEventListener('click', async () => {
+                        if (!navigator.geolocation) { alert('Geolocation not supported'); return; }
+                        btn.disabled = true; btn.textContent = 'Locating...';
+                        navigator.geolocation.getCurrentPosition(async (pos) => {
+                            try {
+                                const res = await fetch(nominatimReverseUrl(pos.coords.latitude, pos.coords.longitude));
+                                const json = await res.json();
+                                input.value = json.display_name || `${pos.coords.latitude}, ${pos.coords.longitude}`;
+                            } catch (e) { 
+                                input.value = `${pos.coords.latitude}, ${pos.coords.longitude}`; 
+                            }
+                            btn.disabled = false; btn.textContent = 'Use current';
+                        }, (err) => { 
+                            alert('Could not get location: ' + err.message); 
+                            btn.disabled = false; btn.textContent = 'Use current'; 
+                        });
+                    });
+                }
+            }
+
+            // Attach to all location fields
+            attachAutoSuggest('pickupLocation', 'pickupSuggestions', 'pickupUseCurrent');
+            attachAutoSuggest('dropoffLocation', 'dropoffSuggestions', 'dropoffUseCurrent');
+            attachAutoSuggest('modalPickup', 'modalPickupSuggestions', 'modalPickupUseCurrent');
+            attachAutoSuggest('modalDropoff', 'modalDropoffSuggestions', 'modalDropoffUseCurrent');
+
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('pickupDate').setAttribute('min', today);
+            document.getElementById('returnDate').setAttribute('min', today);
+            document.getElementById('modalPickupDate').setAttribute('min', today);
+            document.getElementById('modalReturnDate').setAttribute('min', today);
+        });
+
+        async function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const form = document.getElementById('rentalForm');
+            const successMsg = document.getElementById('successMessage');
+            const errorMsg = document.getElementById('errorMessage');
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+
+            if (!form.checkValidity()) {
+                errorMsg.textContent = 'Please check required fields.';
+                errorMsg.classList.remove('hidden');
+                form.reportValidity();
+                return;
+            }
+
+            const phone = document.getElementById('phoneNumber').value;
+            const phoneValid = /^[\d\s\+\-\(\)]+$/.test(phone) && phone.replace(/\D/g, '').length >= 10;
+            if (!phoneValid) {
+                errorMsg.textContent = 'Please enter a valid phone number (at least 10 digits).';
+                errorMsg.classList.remove('hidden');
+                return;
+            }
+
+            const fd = new FormData(form);
+            const data = {};
+            for (const [k, v] of fd.entries()) data[k] = v;
+            if (!document.getElementById('differentReturn').checked) data['dropoffLocation'] = data['pickupLocation'];
+
+            const pickupDate = data.pickupDate;
+            const returnDate = data.returnDate;
+            if (pickupDate && returnDate && pickupDate > returnDate) {
+                errorMsg.textContent = 'Return date must be same or after pickup date.';
+                errorMsg.classList.remove('hidden');
+                return;
+            }
+
+            try {
+                const res = await fetch('send_mail.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+                const json = await res.json();
+                if (json && json.success) {
+                    window.location.href = 'thankyou.html';
+                } else {
+                    throw new Error(json.message || 'Server error');
+                }
+            } catch (e) {
+                console.error('Submission failed', e);
+                errorMsg.textContent = 'Could not submit. Please try again later.';
+                errorMsg.classList.remove('hidden');
+            }
+        }
+
+        function toggleReturnLocation() {
+            const checkbox = document.getElementById('differentReturn');
+            const field = document.getElementById('dropoffLocationField');
+            const dropoffInput = document.getElementById('dropoffLocation');
+            
+            if (checkbox.checked) {
+                field.classList.remove('hidden');
+                dropoffInput.setAttribute('required', 'true');
+            } else {
+                field.classList.add('hidden');
+                dropoffInput.removeAttribute('required');
+                dropoffInput.value = '';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
