@@ -1424,7 +1424,7 @@
                     if (!json.length) { list.classList.add('hidden'); return; }
                     json.forEach(place => {
                         const item = document.createElement('div');
-                        item.className = 'px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm';
+                        item.class = 'px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm';
                         item.textContent = place.display_name;
                         item.addEventListener('click', () => {
                             input.value = place.display_name;
@@ -1703,7 +1703,7 @@
                         if (!json.length) { list.classList.add('hidden'); return; }
                         json.forEach(place => {
                             const item = document.createElement('div');
-                            item.className = 'px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm font-medium transition';
+                            item.class = 'px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm font-medium transition';
                             item.textContent = place.display_name;
                             item.addEventListener('click', () => {
                                 input.value = place.display_name;
