@@ -12,10 +12,10 @@
     font-family: 'Inter', sans-serif;
     font-weight: 900;
     letter-spacing: -1px;
-    color: #db3535;
+    color: #ea580c;
 }
 input:focus, select:focus {
-    --tw-ring-color: #db3535 !important;
+    --tw-ring-color: #ea580c !important;
 }
 
 /* New section tweaks */
@@ -23,6 +23,6 @@ input:focus, select:focus {
 .faq-a { transition: max-height 0.25s ease; }
 
 /* Ensure primary color utility fallback for plain CSS elements */
-.text-primary { color: #db3535 !important; }
-.bg-primary { background-color: #db3535 !important; }
-.border-primary { border-color: #db3535 !important; }
+.text-primary { color: #ea580c !important; }
+.bg-primary { background-color: #ea580c !important; }
+.border-primary { border-color: #ea580c !important; }
